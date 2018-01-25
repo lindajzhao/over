@@ -1,0 +1,61 @@
+// Normalize typography
+body {
+    font-family: $text-font;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize;
+}
+a:visited {
+    color: black;
+}
+
+
+
+
+// Headings
+.heading--heroMain  {
+    font-size: 6rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.heading--heroSecondary {
+    font-size: 3.2rem;
+    color: $text-gray;
+    text-align: center;
+}
+
+.heading--section {
+    font-size: 3.6rem;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+
+// Text
+.text--regular {
+    font-size: 1.4rem;
+    color: $text-gray;
+    line-height: 2;
+}
+
+.text--author {
+    @extend .text--regular;
+    font-weight: 500;
+
+    span {
+        font-weight: 400;
+        font-style: italic;
+    }
+}
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 2 - Over</title>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+    .wrapper {
+  width: 80%;
+  max-width: 1150px;
+  margin: 0 auto; }
+
+footer {
+  color: pink; }
+
+body {
+  background: orange; }
+
+.parent {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; }
+
+.child {
+  min-height: 100px;
+  background: blue;
+  border: 1px black solid; }
+
+.air {
+  grid-row-end: span 2;
+  background: pink; }
+
+.containers {
+  background: green;
+  grid-column-start: span 2; }
+
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child air">air</div>
+        <div class="child office">office Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptate inventore, vitae quod vero alias,
+            facere in repellat, ducimus soluta quam? Deleniti totam illum rerum quam repellat. Autem, nemo odit. Sapiente
+            quisquam, itaque aut tempore maxime cum voluptate earum dicta.</div>
+        <div class="child house">house</div>
+        <div class="child containers">containers</div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+
+
+    </div>
+
+    <footer>hi</footer>
+
+</body>
+
+</html>

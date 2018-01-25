@@ -1,0 +1,23 @@
+
+
+@mixin btn--small($bgcolor, $textcolor) {
+    background: $bgcolor;
+    color: $textcolor;
+    padding: 0.8rem;
+}
+
+
+
+@mixin btn--large($bgcolor, $textcolor) {
+    background: $bgcolor;
+    color: $textcolor;
+    padding: 1rem 2rem;
+}
+
+@mixin flexCenter($dir) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+    text-align: center;
+}

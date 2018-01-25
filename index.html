@@ -6,23 +6,334 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project 2 - Over</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src='https://use.fontawesome.com/8d93889061.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
+
 </head>
 <body>
-    <div class="parent">
-        <div class="child air">air</div>
-        <div class="child office">office Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptate inventore, vitae quod vero alias, facere in repellat, ducimus soluta quam? Deleniti totam illum rerum quam repellat. Autem, nemo odit. Sapiente quisquam, itaque aut tempore maxime cum voluptate earum dicta.</div>
-        <div class="child house">house</div>
-        <div class="child containers">containers</div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
+    <header>
+        <div class="wrap--headerSection">
+            <a href="#" class="link--mainNav">Home</a>
+            <a href="#" class="link--mainNav">About</a>
+            <a href="#" class="link--mainNav">Pages</a>
+            <a href="#" class="link--mainNav">Shop</a>
+            <a href="#" class="link--mainNav">Blog</a>
+        </div>
+        <div class="wrap--headerSection">
+            <!-- can a logo img be h1?? -->
+            <img src="assets/logo.png" alt="Over company logo" class="logo--mainNav">
+        </div>
+        <div class="wrap--headerSection">
+            <a href="#" class="icon--mainNav">
+                <img src="assets/icon-bag.png" alt="Shopping bag icon">
+            </a>
+            <a href="#" class="icon--mainNav">
+                <i class="fa fa-search" aria-hidden="true"></i>
+
+            </a>
+            <a href="#" class="icon--mainNav">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrap--hero">
+            <h3 class="heading--heroSecondary">Over Collection 2017</h3>
+            <h2 class="heading--heroMain">Living &#38; Styling with Plants</h2>
+            <button class="btn__cta">Shop Now</button>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="wrapper">
+            <!-- the section description part -->
+            <div class="wrap--categoriesDescription wrap--description">
+                <h2 class="heading--section">The Home of Interior Plants</h2>
+                <p class="text--regular">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi dolorem enim ipsum laudantium voluptate nemo vel ratione odit corporis similique doloribus sed provident, explicabo amet dolor beatae facere sunt temporibus debitis eveniet! Saepe, numquam architecto. Dolores consectetur iure eius voluptates?</p>
+                <p class="text--author">James Brace . <span>Web Design</span></p>
+            </div>
+
+            <!-- the product grid part -->
+            <div class="layout__categories">
+                <div class="air">
+                    <div class="wrap--overlayText">
+                        <h4 class="heading--categories">Air Plants</h4>
+                        <p class="itemCount">12 Items</p>
+                    </div>
+                </div>
+                <div class="office">
+                    <div class="wrap--overlayText">
+                        <h4 class="heading--categories">Office Plants</h4>
+                        <p class="itemCount">12 Items</p>
+                    </div>
+                </div>
+                <div class="home">
+                    <div class="wrap--overlayText">
+                        <h4 class="heading--categories">Home Plants</h4>
+                        <p class="itemCount">21 Items</p>
+                    </div>
+                </div>
+                <div class="containers">
+                    <div class="wrap--overlayText">
+                        <h4 class="heading--categories">Plant Containers</h4>
+                        <p class="itemCount">07 Items</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!--wrapper-->
+    </section>
+
+    <section class="popular">
+        <div class="wrapper">
+            <h2 class="heading--sectionMain">Popular Products</h2>
+            <div class="nav__section">
+                <a href="#">New Arrivals</a>
+                <a href="#">Best Seller</a>
+                <a href="#">Features</a>
+            </div>
+
+            <!-- flexbox gallery item(10 children) -->
+            <div class="layout__5col grid__popularProducts">
+                <!-- 1st item in popular products -->
+                <a href="#" class="popularItem">
+                    <!-- top: photo -->
+                    <div class="popularItem__image productImage">
+                        <!-- photo for product -->
+                        <img src="assets/featured1.jpg" alt="">
+                        <div class="productCallout--hot">Hot</div>
+                        <div class="productCallout--new">New</div>
+                        <!-- overlay for photo -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div> <!-- end photo part-->
+                    <!-- bottom part: product name and price -->
+                    <h5 class="productName">Pebbled backpack</h5>
+                    <p class="productPrice">$99.00</p>
+                </a>
+
+                <!-- 1st item in popular products -->
+                <a href="#" class="popularItem">
+                    <!-- top: photo -->
+                    <div class="popularItem__image productImage">
+                        <!-- photo for product -->
+                        <img src="assets/featured1.jpg" alt="">
+                        <div class="productCallout--hot">Hot</div>
+                        <div class="productCallout--new">New</div>
+                        <!-- overlay for photo -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <!-- end photo part-->
+                    <!-- bottom part: product name and price -->
+                    <h5 class="productName">Pebbled backpack</h5>
+                    <p class="productPrice">$99.00</p>
+                </a>
+
+                <!-- add a bunch more items (2 so far) -->
+                
+            </div>
+        </div> <!--wrapper-->
+    </section>
 
 
-    </div>
+    <section class="testimonials layout__2col">
+        <!-- no wrapper for this section -->
+        <!-- left side of section -->
+        <div class="testimonials__quote layout__2col--col">
+            <div class="wrap--testimonialsQuote">
+                <h2 class="heading--sectionMain">
+                    What are our customers saying?
+                </h2>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus est nostrum facere, quae voluptatem voluptatibus voluptas, quisquam dignissimos ipsa, ea fuga in culpa architecto enim dolores laboriosam assumenda maxime? Iste, ipsam quae ab dignissimos odio vitae voluptatibus autem dolore! Cumque eaque corrupti hic, dolore saepe doloremque ullam provident et ad.</p>
+                    <cite>Rosinante Brooks. Web Design</cite>
+                </blockquote>
+            </div>
+        </div>
 
-    <footer>hi</footer>
+        <!-- right side of section (video) -->
+        <div class="testimonials__video layout__2col--col">
+            <div class="graphic--playButton"><i class="fa fa-play" aria-hidden="true"></i></div>
+            <div class="wrap--videoDescription">
+                <h6 class="display--graphic">Plants</h6>
+                <h6 class="display--graphic">Store</h6>
+                <h6 class="display--small">Amazing Shop Themes</h6>
+            </div>
+        </div>
+    </section>
 
+    <section class="blog">
+        <div class="wrapper">
+            <h2 class="heading--sectionHeading">From Our Blog</h2>
+
+            <!-- beginning of 3 col blog -->
+            <div class="layout__3col">
+                <!-- blog article blurb 1 -->
+                <div class="layout__3col__col">
+                    <a href="#">
+                        <img src="assets/blog1.jpg" alt="">
+                    </a>
+                    <div class="wrap--blogBlurb">
+                        <p class="text--subtext">
+                            December 14, 2017
+                        </p>
+                        <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
+                        <a href="#" class="link--more">
+                            Read More
+                        </a>
+                    </div>
+                </div> 
+
+                <!-- blog article blurb 2 -->
+                <div class="layout__3col__col">
+                    <a href="#">
+                        <img src="assets/blog2.jpg" alt="">
+                    </a>
+                    <div class="wrap--blogBlurb">
+                        <p class="text--subtext">
+                            December 14, 2017
+                        </p>
+                        <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
+                        <a href="#" class="link--more">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- blog article blurb 3 -->
+                <div class="layout__3col__col">
+                    <a href="#">
+                        <img src="assets/blog3.jpg" alt="">
+                    </a>
+                    <div class="wrap--blogBlurb">
+                        <p class="text--subtext">
+                            December 14, 2017
+                        </p>
+                        <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
+                        <a href="#" class="link--more">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+
+            </div> <!-- end of 3 col-->
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="wrapper">
+            <h2 class="heading--sectionHeading">Sign up for newsletter</h2>
+            <p class="text--regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis suscipit officia repudiandae numquam. Voluptates quidem ut dolore facere officiis.</p>
+
+            <!-- newsletter sign up form  -->
+            <form class="form__newsletter">
+                <label for="newsletterEmail visuallyHidden">Enter your email address</label>
+                <input type="text" placeholder="Enter your email" id="newsletterEmail">
+                <button>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </button>
+            </form>
+
+            <!-- brand icons * 5 -->
+            <div class="wrap--brandIcons">
+                <img class="graphics--brandLogo" src="assets/brand1.png" alt="Authenic Athletics Logo">
+                <img class="graphics--brandLogo" src="assets/brand2.png" alt="Authenic Athletics Logo">
+                <img class="graphics--brandLogo" src="assets/brand3.png" alt="Authenic Athletics Logo">
+                <img class="graphics--brandLogo" src="assets/brand4.png" alt="Authenic Athletics Logo">
+                <img class="graphics--brandLogo" src="assets/brand5.png" alt="Authenic Athletics Logo">
+            </div>
+        </div>
+    </section>
+
+    <footer> <!-- divided into 4 sections -->
+        <!-- 1/4 col -->
+        <div class="wrap--footerSection1">
+            <img src="assets/logo.png" alt="" class="graphics--logo">
+            <p class="text--regular">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo dolores quae, beatae laudantium soluta in doloremque illum quisquam harum nisi.</p>
+            <div class="wrap--footerSocial">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+            </div>
+        </div>
+
+
+        <div class="wrap--footerSection2">
+            <h6 class="heading--footer">Services</h6>
+            <ul class="wrap--footerLinks">
+                <li>
+                    <a href="#" class="link--footer">International Shipping</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Terms and Conditions</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Orders and Returns</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Shipping Rates</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">FAQs</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap--footerSection3">
+            <h6 class="heading--footer">Services</h6>
+            <ul class="wrap--footerLinks">
+                <li>
+                    <a href="#" class="link--footer">International Shipping</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Terms and Conditions</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Orders and Returns</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Shipping Rates</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">FAQs</a>
+                </li>
+                <li>
+                    <a href="#" class="link--footer">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap--footerSection4">
+            <h6 class="heading--footer">Instagram</h6>
+            <div class="layout__3col wrap--instaGallery">
+                <img src="assets/insta1.png" alt="">
+                <img src="assets/insta2.jpg" alt="">
+                <img src="assets/insta3.jpg" alt="">
+                <img src="assets/insta4.jpg" alt="">
+                <img src="assets/insta5.jpg" alt="">
+                <img src="assets/insta6.jpg" alt="">
+            </div>
+            <div class="wrap--cc">
+                <img src="assets/graphics-cc1.png" alt="Amex card">
+                <img src="assets/graphics-cc2.png" alt="Discover card">
+                <img src="assets/graphics-cc3.png" alt="Visa card">
+                <img src="assets/graphics-cc4.png" alt="Mastercard">
+                <img src="assets/graphics-cc5.png" alt="Debit card">
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>

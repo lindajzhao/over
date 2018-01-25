@@ -1,11 +1,19 @@
 // header for all pages :D
 
-header {
 
-}
 
 .wrapper {
     width: 80%;
     max-width: 1150px;
     margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+// children - 3 divs
+.wrap--headerSection {
+
 }
