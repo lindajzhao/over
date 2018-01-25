@@ -1,0 +1,29 @@
+.wrapper {
+  width: 80%;
+  max-width: 1150px;
+  margin: 0 auto; }
+
+footer {
+  color: pink; }
+
+body {
+  background: orange; }
+
+.parent {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr; }
+
+.child {
+  min-height: 100px;
+  background: blue;
+  border: 1px black solid; }
+
+.air {
+  grid-row-end: span 2;
+  background: pink; }
+
+.containers {
+  background: green;
+  grid-column-start: span 2; }
