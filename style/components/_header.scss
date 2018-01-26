@@ -11,9 +11,11 @@
 header {
     display: flex;
     justify-content: space-between;
+    margin: 30px 0;
 }
 
-// children - 3 divs
-.wrap--headerSection {
-
+header > div {
+    width: 33%;
+    float: left;
+    @include flexCenter(row);
 }

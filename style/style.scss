@@ -1,35 +1,49 @@
+@import "normalize";
 @import "variables";
-@import "typography";
 @import "mixin";
+@import "typography";
 @import "components/header";
 @import "components/footer";
 
 /*----------------------------------------
     all sections
 ----------------------------------------*/
+
+.visuallyHidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+
 section {
     margin-bottom: 50px;
 }
 
-.wrap--description {
+.wrap--small {
     width: 70%;
+    margin: 0 auto 80px;
+}
+
+img {
+    width: 100%;
 }
 
 /*----------------------------------------
     Section - hero
 ----------------------------------------*/
 .hero {
-    background: url("../assets/hero.jpg"), linear-gradient(rgba(#fff, 0.5), rgba(#fff, 0.5));
+    background:linear-gradient(rgba(#fff,0.4),rgba(#fff,0.4)), url("../assets/hero.jpg");
     min-height: 500px;
     background-size: cover;
     @include flexCenter(row);
 }
 
 .wrap--hero {
-    // align items in center
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 50px;
     @include flexCenter(column);
 }
 
@@ -44,36 +58,312 @@ section {
 .wrap--categoriesDescription {
     @include flexCenter(column);
 }
+.btn__cart {
+    @include btn--small(#fff, #000);
+}
 
 .wrap--overlayText {
-    padding: 1rem;
+    padding: 1rem 2rem;
     background: #fff;
 }
 
+.overlayArea {
+    position: relative;
+    line-height: 0;
+}
+
+.popularItem__overlay {
+    // center the add to cart button
+    @include flexCenter(row);
+    // position related to .overlayArea
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0, 0, 0, 0.6); 
+    // hidden by default 
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+// show overlay on hover
+.overlayArea:hover .popularItem__overlay {
+   visibility: visible;
+   opacity:1;
+}
+
+
 .layout__categories {
     display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    width: 100%;
+    // justify-items: stretch;
+    // align-items: stretch;
+    justify-content: stretch;
 }
 
-.air {
-    background: url(../assets/airPlants.jpg);
+.categoryCard {
+    min-height: 260px;
+    background-size: contain;
+    @include flexCenter(row);
+
+    &:nth-of-type(1) {
+        background: url('../assets/airPlants.jpg') no-repeat center;
+        background-size: cover;
+        grid-row-end: span 2;
+    }
+
+    &:nth-of-type(2) {
+        background: url('../assets/officePlants.jpg') no-repeat center;
+    }
+
+    &:nth-of-type(3) {
+        background: url('../assets/housePlants.jpg') no-repeat center;
+    }
+
+    &:nth-of-type(4) {
+        background: url('../assets/plantContainers.jpg') no-repeat center;
+        grid-column-start: span 2;
+    }
+}
+.popularItem {
+    position: relative;
 }
 
-.containers {
-background:linear-gradient(rgba(#fff,0.5),rgba(#fff,0.5)), url('../assets/plantContainers.jpg');
-width: 200px;
-height: 200px;
+// position hot, new, discount badges
+.badge {
+    // relative to popularItem
+    position: absolute;
+    right: 5px;
+    display: block;
+}
+
+.badge1 {
+    top: 5px;
+}
+
+.badge2 {
+    top: 30px;
+}
+
+//?? right selector?
+
+
+/*----------------------------------------
+    Section - Popular Products
+----------------------------------------*/
+
+.nav__section {
+    margin: 0 auto 40px;
+    display: block;
+    text-align: center;
+}
+
+.grid__popularProducts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    // grid-template-rows: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+
+.popularItem {
+    // border: solid 1px cyan;
+}
+
+.badge-- {
+    &hot {
+        @include badge($pink);
+    }
+
+    &new {
+        @include badge($blue);
+    }
+
+    &discount {
+        @include badge($beige);
+    }
+}
+
+.wrap--popularProductsItemDescription {
+    @include flexCenter(column);
+    padding: 20px;
+
+}
+// ?? check example
+// .overlayArea {
+//     background: linear-gradient(rgba(#000,0.5), rgba(#000, 0.5));
+//     &:hover .popularItem__overlay {
+//         background: linear-gradient(rgba(#000,0.5), rgba(#000, 0.5));
+//     }
+// }
+
+// Popular Item - grid
+
+
+
+
+/*----------------------------------------
+    Section - Testimonials
+----------------------------------------*/
+.layout__2col {
+    display: flex;
+}
+
+.layout__2col>div {
+    // float: left;
+    width: 50%;
+    // min-height: 900px;
+    @include flexCenter(column);
+}
+.testimonials__quote {
+    background: url("../assets/bg-testimonial.jpg");
+}
+.wrap--testimonialsQuote {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.testimonials__video {
+    background-size: cover;
+    background:linear-gradient(rgba(#000,0.4),rgba(#000,0.4)), url("../assets/bg-video.jpg");
+}
+//?? make border lighter
+.graphic--playButton {
+    // outer circle
+    @include flexCenter(row);
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    color: #fff;
+    background: rgba($pink,0.5);
+    border-radius: 50%;
+
+    //inner circle
+    div {
+        @extend .graphic--playButton;
+            width: 65px;
+            height: 65px;
+            background: $pink;
+
+    }
+
+    &:hover div {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+span.display--graphic::before {
+    content: url("../assets/graphics-plantsStore.png");
 }
 
 
 
 /*----------------------------------------
-    Section - hero
+    Section - Blog
 ----------------------------------------*/
 
+.blog {
+    clear:both;
+}
+
+.layout__3col {
+    display: flex;
+}
+
+.layout__3col > div {
+    width: 33%;
+    margin-right: 30px;
+}
+
+.layout__3col > div:last-child {
+    margin-right: 0;
+}
+
+.wrap--blogBlurb {
+    padding: 10px 0;
+}
+
+// gets rid of extra pixel under photo
+.blogBlurb > a {
+    line-height: 0;
+}
+
+/*----------------------------------------
+    Section - Newsletter
+----------------------------------------*/
+.newsletter {
+    padding-bottom: 80px;
+    border-bottom: 1px $light-gray solid;
+
+}
+.newsletter p {
+    text-align: center;
+}
+
+.form__newsletter {
+    width: 70%;
+    margin: 0 auto 100px;
+    position: relative;
+}
+
+.form__newsletter button {
+    // float: right;
+    // width: 10%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 5px 0 5px;
+}
+
+// .form__newsletter input {
+//     float: left;
+//     width: 90%;
+// }
+
+.fa.fa-envelope {
+    color: white;
+    background: black;
+    padding: 0 1px;
+    font-size: 20px;
+}
+
+.input--border-bottom {
+    border: none;
+    border-bottom: $text-gray 1px solid;
+    font-size: 16px;
+    width: 100%;
+}
 
 
 
+.wrap--brandIcons {
+    @include flexCenter(row);
+    justify-content: space-between;
+    // margin-bottom: 120px;
+}
 
+.graphics--logo {
+    width: auto;
+}
+
+.layout__floatRow > * {
+    float: left;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.fa.icon--social {
+    @include setFont(1.9rem, #000, 400);
+    padding: 1rem;
+}
 
 
 
@@ -88,3 +378,4 @@ button, input[type="submit"] {
 .btn__cta {
     @include btn--large($pink, #fff);
 }
+

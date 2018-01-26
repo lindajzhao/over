@@ -12,18 +12,18 @@
 </head>
 <body>
     <header>
-        <div class="wrap--headerSection">
+        <div>
             <a href="#" class="link--mainNav">Home</a>
             <a href="#" class="link--mainNav">About</a>
             <a href="#" class="link--mainNav">Pages</a>
             <a href="#" class="link--mainNav">Shop</a>
             <a href="#" class="link--mainNav">Blog</a>
         </div>
-        <div class="wrap--headerSection">
+        <div>
             <!-- can a logo img be h1?? -->
-            <img src="assets/logo.png" alt="Over company logo" class="logo--mainNav">
+            <img src="assets/logo.png" alt="Over company logo" class="logo--mainNav graphics--logo">
         </div>
-        <div class="wrap--headerSection">
+        <div>
             <a href="#" class="icon--mainNav">
                 <img src="assets/icon-bag.png" alt="Shopping bag icon">
             </a>
@@ -48,36 +48,37 @@
     <section class="categories">
         <div class="wrapper">
             <!-- the section description part -->
-            <div class="wrap--categoriesDescription wrap--description">
+            <div class="wrap--categoriesDescription wrap--small">
                 <h2 class="heading--section">The Home of Interior Plants</h2>
                 <p class="text--regular">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi dolorem enim ipsum laudantium voluptate nemo vel ratione odit corporis similique doloribus sed provident, explicabo amet dolor beatae facere sunt temporibus debitis eveniet! Saepe, numquam architecto. Dolores consectetur iure eius voluptates?</p>
                 <p class="text--author">James Brace . <span>Web Design</span></p>
             </div>
 
+
             <!-- the product grid part -->
             <div class="layout__categories">
-                <div class="air">
+                <div class="categoryCard">
                     <div class="wrap--overlayText">
                         <h4 class="heading--categories">Air Plants</h4>
-                        <p class="itemCount">12 Items</p>
+                        <p class="text--itemCount">12 Items</p>
                     </div>
                 </div>
-                <div class="office">
+                <div class="categoryCard">
                     <div class="wrap--overlayText">
                         <h4 class="heading--categories">Office Plants</h4>
-                        <p class="itemCount">12 Items</p>
+                        <p class="text--itemCount">12 Items</p>
                     </div>
                 </div>
-                <div class="home">
+                <div class="categoryCard">
                     <div class="wrap--overlayText">
                         <h4 class="heading--categories">Home Plants</h4>
-                        <p class="itemCount">21 Items</p>
+                        <p class="text--itemCount">21 Items</p>
                     </div>
                 </div>
-                <div class="containers">
+                <div class="categoryCard">
                     <div class="wrap--overlayText">
                         <h4 class="heading--categories">Plant Containers</h4>
-                        <p class="itemCount">07 Items</p>
+                        <p class="text--itemCount">07 Items</p>
                     </div>
                 </div>
             </div>
@@ -87,55 +88,255 @@
 
     <section class="popular">
         <div class="wrapper">
-            <h2 class="heading--sectionMain">Popular Products</h2>
-            <div class="nav__section">
-                <a href="#">New Arrivals</a>
-                <a href="#">Best Seller</a>
-                <a href="#">Features</a>
-            </div>
+            <h2 class="heading--section underline--long">Popular Products</h2>
+            <nav class="nav__section">
+                <a href="#" class="link link--sectionNav">New Arrivals</a>
+                <a href="#" class="link link--sectionNav">Best Seller</a>
+                <a href="#" class="link link--sectionNav">Features</a>
+            </nav>
 
             <!-- flexbox gallery item(10 children) -->
-            <div class="layout__5col grid__popularProducts">
-                <!-- 1st item in popular products -->
-                <a href="#" class="popularItem">
-                    <!-- top: photo -->
-                    <div class="popularItem__image productImage">
-                        <!-- photo for product -->
-                        <img src="assets/featured1.jpg" alt="">
-                        <div class="productCallout--hot">Hot</div>
-                        <div class="productCallout--new">New</div>
-                        <!-- overlay for photo -->
-                        <div class="popularItem__overlay">
-                            <button class="btn__cart btn--white">
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div> <!-- end photo part-->
-                    <!-- bottom part: product name and price -->
-                    <h5 class="productName">Pebbled backpack</h5>
-                    <p class="productPrice">$99.00</p>
-                </a>
+            <div class="grid__popularProducts">
+                <!-- product # 1 -->
+                <div class="popularItem">
 
-                <!-- 1st item in popular products -->
-                <a href="#" class="popularItem">
-                    <!-- top: photo -->
-                    <div class="popularItem__image productImage">
-                        <!-- photo for product -->
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
                         <img src="assets/featured1.jpg" alt="">
-                        <div class="productCallout--hot">Hot</div>
-                        <div class="productCallout--new">New</div>
-                        <!-- overlay for photo -->
+
+                        <!-- overlay -->
                         <div class="popularItem__overlay">
                             <button class="btn__cart btn--white">
                                 Add to Cart
                             </button>
                         </div>
                     </div>
-                    <!-- end photo part-->
-                    <!-- bottom part: product name and price -->
-                    <h5 class="productName">Pebbled backpack</h5>
-                    <p class="productPrice">$99.00</p>
-                </a>
+
+                    <!-- callout badges -->
+                    <div class="badge--hot badge1 badge">Hot</div>
+                    <div class="badge--new badge2 badge">New</div>
+
+
+                     <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+
+                <!-- product # 2 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured2.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+
+                <!-- product #3 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured3.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- callout badges -->
+                    <div class="badge--discount badge1 badge">-20%</div>
+                
+                
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+                
+                <!-- product #4 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured4.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                            
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+
+                <!-- product #5 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured5.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- callout badges -->
+                    <div class="badge--discount badge1 badge">-20%</div>
+
+            
+                
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+                
+                <!-- product #6 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured6.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+                
+                <!-- product #7 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured7.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- callout badges -->
+                    <div class="badge--hot badge1 badge">Hot</div>
+              
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+                
+                <!-- product #8 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured8.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                
+                    <!-- callout badges -->
+                    <div class="badge--discount badge1 badge">-20%</div>
+             
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+
+                <!-- product #9 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured9.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                                
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
+                
+                <!-- product #10 -->
+                <div class="popularItem">
+                
+                    <!-- photo area + overlay-->
+                    <div class="overlayArea">
+                        <img src="assets/featured10.jpg" alt="">
+                
+                        <!-- overlay -->
+                        <div class="popularItem__overlay">
+                            <button class="btn__cart btn--white">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+              
+                    <!-- description -->
+                    <div class="wrap--popularProductsItemDescription">
+                        <a href="#" class="label--productName">Pebbled backpack</a>
+                        <p class="label--productPrice">$99.00</p>
+                    </div>
+                </div>
 
                 <!-- add a bunch more items (2 so far) -->
                 
@@ -144,27 +345,29 @@
     </section>
 
 
-    <section class="testimonials layout__2col">
+    <section class="testimonials layout__2col clearfix">
         <!-- no wrapper for this section -->
         <!-- left side of section -->
-        <div class="testimonials__quote layout__2col--col">
-            <div class="wrap--testimonialsQuote">
-                <h2 class="heading--sectionMain">
+        <div class="testimonials__quote">
+            <div class="wrap--testimonialsQuote wrap--small">
+                <h2 class="heading--section">
                     What are our customers saying?
                 </h2>
                 <blockquote>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus est nostrum facere, quae voluptatem voluptatibus voluptas, quisquam dignissimos ipsa, ea fuga in culpa architecto enim dolores laboriosam assumenda maxime? Iste, ipsam quae ab dignissimos odio vitae voluptatibus autem dolore! Cumque eaque corrupti hic, dolore saepe doloremque ullam provident et ad.</p>
-                    <cite>Rosinante Brooks. Web Design</cite>
+                    <cite class="text--author">Rosinante Brooks. Web Design</cite>
                 </blockquote>
             </div>
         </div>
 
         <!-- right side of section (video) -->
-        <div class="testimonials__video layout__2col--col">
-            <div class="graphic--playButton"><i class="fa fa-play" aria-hidden="true"></i></div>
+        <div class="testimonials__video">
+            <div class="graphic--playButton">
+                <div><i class="fa fa-play" aria-hidden="true"></i></div>
+            </div>
             <div class="wrap--videoDescription">
-                <h6 class="display--graphic">Plants</h6>
-                <h6 class="display--graphic">Store</h6>
+                <p class="display--graphic">Plants<span class="display--graphic">Store</span></p>
+                
                 <h6 class="display--small">Amazing Shop Themes</h6>
             </div>
         </div>
@@ -172,53 +375,53 @@
 
     <section class="blog">
         <div class="wrapper">
-            <h2 class="heading--sectionHeading">From Our Blog</h2>
+            <h2 class="heading--section underline--long">From Our Blog</h2>
 
             <!-- beginning of 3 col blog -->
             <div class="layout__3col">
                 <!-- blog article blurb 1 -->
-                <div class="layout__3col__col">
+                <div class="blogBlurb">
                     <a href="#">
                         <img src="assets/blog1.jpg" alt="">
                     </a>
                     <div class="wrap--blogBlurb">
-                        <p class="text--subtext">
+                        <p class="text--regular">
                             December 14, 2017
                         </p>
                         <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
-                        <a href="#" class="link--more">
+                        <a href="#" class="link">
                             Read More
                         </a>
                     </div>
                 </div> 
 
                 <!-- blog article blurb 2 -->
-                <div class="layout__3col__col">
+                <div class="blogBlurb">
                     <a href="#">
                         <img src="assets/blog2.jpg" alt="">
                     </a>
                     <div class="wrap--blogBlurb">
-                        <p class="text--subtext">
+                        <p class="text--regular">
                             December 14, 2017
                         </p>
                         <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
-                        <a href="#" class="link--more">
+                        <a href="#" class="link">
                             Read More
                         </a>
                     </div>
                 </div>
 
                 <!-- blog article blurb 3 -->
-                <div class="layout__3col__col">
+                <div class="blogBlurb">
                     <a href="#">
                         <img src="assets/blog3.jpg" alt="">
                     </a>
                     <div class="wrap--blogBlurb">
-                        <p class="text--subtext">
+                        <p class="text--regular">
                             December 14, 2017
                         </p>
                         <h4 class="heading--blogTitle">How to wear fishnets like a street style superstar</h4>
-                        <a href="#" class="link--more">
+                        <a href="#" class="link">
                             Read More
                         </a>
                     </div>
@@ -231,13 +434,13 @@
 
     <section class="newsletter">
         <div class="wrapper">
-            <h2 class="heading--sectionHeading">Sign up for newsletter</h2>
-            <p class="text--regular">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis suscipit officia repudiandae numquam. Voluptates quidem ut dolore facere officiis.</p>
+            <h2 class="heading--section underline--long">Sign up for newsletter</h2>
+            <p class="text--regular wrap--small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore perferendis suscipit officia repudiandae numquam. Voluptates quidem ut dolore facere officiis.</p>
 
             <!-- newsletter sign up form  -->
-            <form class="form__newsletter">
-                <label for="newsletterEmail visuallyHidden">Enter your email address</label>
-                <input type="text" placeholder="Enter your email" id="newsletterEmail">
+            <form class="form__newsletter clearfix">
+                <label for="newsletterEmail" class="visuallyHidden">Enter your email address</label>
+                <input type="text" placeholder="Enter your email" class="input--border-bottom" id="newsletterEmail">
                 <button>
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                 </button>
@@ -245,79 +448,107 @@
 
             <!-- brand icons * 5 -->
             <div class="wrap--brandIcons">
-                <img class="graphics--brandLogo" src="assets/brand1.png" alt="Authenic Athletics Logo">
-                <img class="graphics--brandLogo" src="assets/brand2.png" alt="Authenic Athletics Logo">
-                <img class="graphics--brandLogo" src="assets/brand3.png" alt="Authenic Athletics Logo">
-                <img class="graphics--brandLogo" src="assets/brand4.png" alt="Authenic Athletics Logo">
-                <img class="graphics--brandLogo" src="assets/brand5.png" alt="Authenic Athletics Logo">
+                <img class="graphics--logo" src="assets/brand1.png" alt="Authenic Athletics Logo">
+                <img class="graphics--logo" src="assets/brand2.png" alt="Authenic Athletics Logo">
+                <img class="graphics--logo" src="assets/brand3.png" alt="Authenic Athletics Logo">
+                <img class="graphics--logo" src="assets/brand4.png" alt="Authenic Athletics Logo">
+                <img class="graphics--logo" src="assets/brand5.png" alt="Authenic Athletics Logo">
             </div>
         </div>
     </section>
 
-    <footer> <!-- divided into 4 sections -->
+    <footer class="wrapper"> <!-- divided into 4 sections -->
         <!-- 1/4 col -->
         <div class="wrap--footerSection1">
             <img src="assets/logo.png" alt="" class="graphics--logo">
             <p class="text--regular">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo dolores quae, beatae laudantium soluta in doloremque illum quisquam harum nisi.</p>
-            <div class="wrap--footerSocial">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
+            <ul class="text--regular">
+                <li>
+                    <span class="text--bold">Address:</span> 361 Fifth Avenue, 36th New York
+                </li>
+                <li>
+                    <span class="text--bold">Phone:</span> 372-394-0990
+                </li>
+                <li>
+                    <span class="text--bold">Email:</span> lindajzhao@gmail.com
+                </li>
+                <li>
+                    <span class="text--bold">Skype:</span> hello
+                </li>
+            </ul>
+
+
+            <div class="layout__floatRow clearfix">
+                <a href="#">
+                    <i class="fa fa-facebook icon--social" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter icon--social" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-google-plus icon--social" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-instagram icon--social" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-pinterest icon--social" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
 
 
         <div class="wrap--footerSection2">
-            <h6 class="heading--footer">Services</h6>
+            <h6 class="heading--footer underline--short">Services</h6>
             <ul class="wrap--footerLinks">
                 <li>
-                    <a href="#" class="link--footer">International Shipping</a>
+                    <a href="#" class="link link--footer">International Shipping</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Terms and Conditions</a>
+                    <a href="#" class="link link--footer">Terms and Conditions</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Orders and Returns</a>
+                    <a href="#" class="link link--footer">Orders and Returns</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Shipping Rates</a>
+                    <a href="#" class="link link--footer">Shipping Rates</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">FAQs</a>
+                    <a href="#" class="link link--footer">FAQs</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Contact</a>
+                    <a href="#" class="link link--footer">Contact</a>
                 </li>
             </ul>
         </div>
+
         <div class="wrap--footerSection3">
-            <h6 class="heading--footer">Services</h6>
+            <h6 class="heading--footer underline--short">Services</h6>
             <ul class="wrap--footerLinks">
                 <li>
-                    <a href="#" class="link--footer">International Shipping</a>
+                    <a href="#" class="link link--footer">International Shipping</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Terms and Conditions</a>
+                    <a href="#" class="link link--footer">Terms and Conditions</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Orders and Returns</a>
+                    <a href="#" class="link link--footer">Orders and Returns</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Shipping Rates</a>
+                    <a href="#" class="link link--footer">Shipping Rates</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">FAQs</a>
+                    <a href="#" class="link link--footer">FAQs</a>
                 </li>
                 <li>
-                    <a href="#" class="link--footer">Contact</a>
+                    <a href="#" class="link link--footer">Contact</a>
                 </li>
             </ul>
         </div>
+
         <div class="wrap--footerSection4">
-            <h6 class="heading--footer">Instagram</h6>
-            <div class="layout__3col wrap--instaGallery">
+            <h6 class="heading--footer underline--short">Instagram</h6>
+            <div class="layout__footerInsta">
                 <img src="assets/insta1.png" alt="">
                 <img src="assets/insta2.jpg" alt="">
                 <img src="assets/insta3.jpg" alt="">
@@ -325,12 +556,12 @@
                 <img src="assets/insta5.jpg" alt="">
                 <img src="assets/insta6.jpg" alt="">
             </div>
-            <div class="wrap--cc">
-                <img src="assets/graphics-cc1.png" alt="Amex card">
-                <img src="assets/graphics-cc2.png" alt="Discover card">
-                <img src="assets/graphics-cc3.png" alt="Visa card">
-                <img src="assets/graphics-cc4.png" alt="Mastercard">
-                <img src="assets/graphics-cc5.png" alt="Debit card">
+            <div class="layout__floatRow clearfix">
+                <img src="assets/graphics-cc1.png" alt="Amex card" class="graphics--logo">
+                <img src="assets/graphics-cc2.png" alt="Discover card" class="graphics--logo">
+                <img src="assets/graphics-cc3.png" alt="Visa card" class="graphics--logo">
+                <img src="assets/graphics-cc4.png" alt="Mastercard" class="graphics--logo">
+                <img src="assets/graphics-cc5.png" alt="Debit card" class="graphics--logo">
             </div>
         </div>
 

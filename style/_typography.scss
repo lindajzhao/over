@@ -1,3 +1,10 @@
+// use .otf font file
+
+@font-face {
+    font-family:"PressStyle";
+    src: url("../assets/press_style/PressStyle.otf")
+}
+
 // Normalize typography
 body {
     font-family: $text-font;
@@ -10,52 +17,182 @@ html {
 h1, h2, h3, h4, h5, h6, p, a, ul, li, blockquote {
     margin: 0;
     padding: 0;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
+
 a:visited {
     color: black;
 }
 
-
-
-
-// Headings
-.heading--heroMain  {
-    font-size: 6rem;
-    font-weight: 500;
-    text-align: center;
+a {
+    text-decoration: none;
+    display: inline-block;
 }
 
-.heading--heroSecondary {
-    font-size: 3.2rem;
-    color: $text-gray;
-    text-align: center;
+li {
+    list-style-type: none;
 }
 
-.heading--section {
-    font-size: 3.6rem;
-    font-weight: 500;
-    margin: 20px 0;
-}
 
+
+
+// heading
+
+.heading-- {
+    &heroMain {
+        @include setFont(6rem, #000, 500);
+        text-align: center;
+    }
+
+    &heroSecondary {
+        @include setFont(3.2rem, $text-gray, 400);
+        text-align: center;
+    }
+
+    &section {
+        @include setFont(3.5rem, #000, 500);
+        margin: 20px 0;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
+    &categories {
+        @include setFont(2.4rem, #000, 400);
+    }
+
+    &blogTitle {
+        @include setFont(1.8rem, #000, 500);
+        margin-bottom: 20px;
+    }
+
+    &footer {
+        @include setFont(2.4rem, #000, 500);
+        margin-bottom: 30px;
+    }
+
+}
 
 // Text
-.text--regular {
-    font-size: 1.4rem;
-    color: $text-gray;
-    line-height: 2;
-}
 
-.text--author {
-    @extend .text--regular;
-    font-weight: 500;
+.text-- {
+    &regular {
+        @include setFont(1.4rem, $text-gray, 400);
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+    &itemCount {
+        @include setFont(1.6rem, $text-gray, 400);
+    }
 
-    span {
-        font-weight: 400;
-        font-style: italic;
+    &author {
+        @include setFont(1.4rem, $text-gray, 500);
+        margin-top: 40px;
+        display: inline-block;
+
+        span {
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+
+    &bold {
+        font-weight: 500;
+        color: black;
     }
 }
 
+// links
+
+.link {
+    @include setFont(1.4rem, #000, 400);
+    padding: 0.3rem 0;
+
+    &--sectionNav {
+        padding: 0.5rem 0;
+        margin: 0 3rem;
+        display: inline-block;
+        border-bottom: 1px solid transparent;
+
+        &:hover, &:focus {
+            color: $pink;
+            border-bottom: 1px solid #000;
+        }
+    }
+
+    &--footer {
+        color: $text-gray;
+        display: inline-block;
+    }
+
+}
+
+// label in categories
+
+.label-- {
+    &productName {
+        @include setFont(1.4rem, #000, 400);
+    }
+
+    &productPrice {
+        @include setFont(1.8rem, #000, 400);
+    }
+
+    &productPriceOld {
+        @include setFont(1.4rem, $text-gray, 400);
+        text-decoration: line-through;
+    }
+}
+
+blockquote {
+    @include setFont(1.6rem, #000, 400);
+    font-style: italic;
+    line-height: 2;
+}
+
+.display-- {
+    &graphic {
+        @include setFont(8rem, #fff, 400);
+        font-family: "PressStyle", sans-serif;
+        text-transform: uppercase;
+    }
+
+    &small {
+        @include setFont(1.6rem, #fff, 400);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+}
+
+
+// text underline
+
+.underline--long {
+    // little border under heading
+    &::after {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: $light-gray;
+        border-left: 25px $blue solid;
+        border-right: 25px $blue solid;
+        margin: 0 auto; // centers
+        margin-top: 10px; //some space between line and text
+    }
+}
+
+.underline--short {
+    &::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: $blue;
+        // margin: 0 auto; // centers
+        margin-top: 10px; //some space between line and text
+    }
+}
