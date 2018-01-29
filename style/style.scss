@@ -2,6 +2,7 @@
 @import "variables";
 @import "mixin";
 @import "typography";
+@import "components/buttons";
 @import "components/header";
 @import "components/footer";
 
@@ -13,10 +14,9 @@
     max-width: 1150px;
     margin: 0 auto;
     @media (max-width: $break-large) {
-        width: 90%;
+        width: 95%;
     } 
 }
-
 
 .visuallyHidden {
     border: 0;
@@ -35,9 +35,8 @@ section {
 .wrap--small {
     width: 70%;
     margin: 0 auto 40px;
-    @media (max-width:$break-large) {
-        width: 100%;
-        // margin: 0 auto 40px;
+    @media (max-width:$break-med) {
+        width: 95%;
     }
 }
 
@@ -102,10 +101,6 @@ img {
     @include flexCenter(column);
 }
 
-.btn__cart {
-    @include btn--small(#fff, #000);
-}
-
 .wrap--overlayText {
     padding: 1rem 2rem;
     background: #fff;
@@ -154,7 +149,7 @@ img {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 15px;
     }
-    @media (max-width: $break-small) {
+    @media (max-width: $break-med) {
         grid-gap: 15px;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
@@ -164,36 +159,37 @@ img {
     }
 }
 
+// 4 categoryCards
 .categoryCard {
     min-height: 260px;
     background-size: contain;
     @include flexCenter(row);
-    transition: 0.5s all; //?
 
     &:nth-of-type(1) {
         grid-area: airPlants;
-        background: url('../assets/airPlants.jpg') no-repeat;
+        background: linear-gradient(rgba(#000, 0.0), rgba(#000, 0.0)), url('../assets/airPlants.jpg') no-repeat center;
         background-size: cover;
-        // grid-row-end: span 2;
+
         &:hover {
-            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/airPlants.jpg') no-repeat;
+            background: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)),
+               url('../assets/airPlants.jpg') no-repeat center;
+               background-size: cover;
         }
-        
     }
 
     &:nth-of-type(2) {
         grid-area: officePlants;
-        background: url('../assets/officePlants.jpg') no-repeat;
+        background: url('../assets/officePlants.jpg') no-repeat center;
         &:hover {
-            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/officePlants.jpg') no-repeat;
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/officePlants.jpg') no-repeat center;
         }
     }
 
     &:nth-of-type(3) {
         grid-area: housePlants;
-        background: url('../assets/housePlants.jpg') no-repeat;
+        background: url('../assets/housePlants.jpg') no-repeat center;
         &:hover {
-            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/housePlants.jpg') no-repeat;
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/housePlants.jpg') no-repeat center;
         }
     }
 
@@ -208,7 +204,6 @@ img {
 }
 .popularItem {
     position: relative;
-    // min-width: 160px;
 }
 
 // position hot, new, discount badges
@@ -219,16 +214,17 @@ img {
     display: block;
 }
 
-.badge1 {
+.badge:nth-of-type(2) {
     top: 5px;
 }
 
-.badge2 {
-    top: 30px;
-}
+// .badge1 {
+//     top: 5px;
+// }
 
-//?? right selector?
-
+// .badge2 {
+//     top: 30px;
+// }
 
 /*----------------------------------------
     Section - Popular Products
@@ -272,17 +268,6 @@ img {
     padding: 20px;
 
 }
-// ?? check example
-// .overlayArea {
-//     background: linear-gradient(rgba(#000,0.5), rgba(#000, 0.5));
-//     &:hover .popularItem__overlay {
-//         background: linear-gradient(rgba(#000,0.5), rgba(#000, 0.5));
-//     }
-// }
-
-// Popular Item - grid
-
-
 
 
 /*----------------------------------------
@@ -335,8 +320,9 @@ img {
 // video 
 
 .testimonials__video {
-    background-size: cover;
+    
     background:linear-gradient(rgba(#000,0.4),rgba(#000,0.4)), url("../assets/bg-video.jpg") no-repeat;
+    background-size: cover;
 }
 
 // position pink quote after heading
@@ -401,8 +387,14 @@ span.display--graphic::before {
 
 .imgFit {
     width: 100%;
+    
     img {
         object-fit: fill;
+        transition: 0.5s opacity;
+    }
+    
+    &:hover img {
+        opacity: 0.6;
     }
 }
 
@@ -498,6 +490,10 @@ span.display--graphic::before {
     margin: 20px;
 }
 
+.graphics--logo {
+    margin: 20px 0;
+}
+
 .layout__floatRow > * {
     float: left;
     margin-right: 10px;
@@ -515,14 +511,4 @@ span.display--graphic::before {
 
 
 
-// button typography and styles
-button, input[type="submit"] {
-    border: none;
-    box-shadow: none;
-    text-transform: uppercase;
-}
-
-.btn__cta {
-    @include btn--large($pink, #fff);
-}
 

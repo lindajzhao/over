@@ -121,10 +121,12 @@ li {
 
 .link {
     @include setFont(1.4rem, #000, 400);
+    border-bottom: 1px solid transparent;
     padding: 0.3rem 0;
 
     &:hover {
         border-bottom: 1px solid #000;
+        color: $pink;
     }
 
     &--sectionNav {
@@ -133,6 +135,9 @@ li {
         margin: 0 3rem;
         display: inline-block;
         border-bottom: 1px solid transparent;
+        @media (max-width: $break-med) {
+            margin: 0 1rem;
+        }
 
         &:hover, &:focus {
             color: $pink;
@@ -188,6 +193,9 @@ blockquote {
         font-family: "PressStyle", sans-serif;
         text-transform: uppercase;
         // display: inline;
+        @media (max-width: $break-large) {
+            font-size: 10vw;
+        }
     }
 
     &small {
@@ -226,13 +234,3 @@ blockquote {
         margin-top: 10px; //some space between line and text
     }
 }
-
-// .hover--overlayImage:hover img, .hover--overlayImage:focus img {
-//     background:linear-gradient(rgba(#000,0.5),rgba(#000,0.5));
-// }
-
-// .hover--overlayImage {
-//     background: red;
-//     z-index: 1;
-// }
-
