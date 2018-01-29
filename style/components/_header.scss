@@ -1,21 +1,76 @@
-// header for all pages :D
+// header for all pages 
 
-
-
-.wrapper {
-    width: 80%;
-    max-width: 1150px;
-    margin: 0 auto;
-}
 
 header {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
+    // margin: 100px 0;
+    
+    flex-wrap: nowrap;
+    @media (max-width: $break-large) {
+    flex-wrap: wrap;
+    }
+
 }
 
 header > div {
-    width: 33%;
-    float: left;
+    flex: 1 1 500px;
+    // width: 33%;
+    // float: left;
     @include flexCenter(row);
+    padding: 10px 0;
+
+}
+
+header div:first-of-type {
+    justify-content: flex-start;
+    @media (max-width: $break-large) {
+        width: 100%;
+        justify-content: center;
+        order: 3;
+
+    }
+} 
+
+header div:nth-of-type(2) {
+    @media (max-width: $break-large) {
+        width: 50%;
+        display: inline;
+    }
+}
+
+header div:last-of-type {
+    justify-content: flex-end;
+    @media (max-width: $break-large) {
+        width: 50%;
+        display: inline;
+    }
+} 
+
+.icon--mainNav {
+    padding: 5px;
+    margin: 0 5px;
+
+    img {
+        height: 24px;
+    }
+
+    &:first-of-type {
+        position: relative;
+    }
+}
+
+.bagItemCount {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $blue;
+    padding-top: 3px;
+
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    p {
+        font-size: 11px;
+    }
 }

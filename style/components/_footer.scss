@@ -5,27 +5,55 @@ footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 30px;
+    grid-template-areas: 
+    "address address address address address services services account account insta insta insta";
+    @media (max-width:$break-large) {
+        grid-gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "address address address address"
+        "services account insta insta";
+    }
+
+    @media (max-width:$break-small) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "address address"
+        "services account" 
+        "insta insta";
+    }
+}
+
+footer > div {
+    margin: 10px;
 }
 
 .wrap--footerSection1 {
-    grid-column-end: span 5;
+    // grid-column-end: span 5;
+    grid-area: address;
 }
 
-.wrap--footerSection2, .wrap--footerSection3 {
-    grid-column-end: span 2;
+.wrap--footerSection2 {
+    // grid-column-end: span 2;
+    grid-area: services;
+}
+
+.wrap--footerSection3 {
+    // grid-column-end: span 2;
+    grid-area: account;
 }
 
 .wrap--footerSection4 {
-    grid-column-end: span 3;
+    // grid-column-end: span 3;
+    grid-area: insta;
 }
 
 .layout__footerInsta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     grid-gap: 10px;
 }
 
 footer .graphics--logo {
-    margin-bottom: 42px;
+    // margin-bottom: 42px;
 }

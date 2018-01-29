@@ -7,17 +7,17 @@
     <title>Project 2 - Over</title>
     <link rel="stylesheet" href="style/style.css">
     <script src='https://use.fontawesome.com/8d93889061.js'></script>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
 
 </head>
 <body>
-    <header>
+    <header class="wrapper">
         <div>
-            <a href="#" class="link--mainNav">Home</a>
-            <a href="#" class="link--mainNav">About</a>
-            <a href="#" class="link--mainNav">Pages</a>
-            <a href="#" class="link--mainNav">Shop</a>
-            <a href="#" class="link--mainNav">Blog</a>
+            <a href="#" class="link--mainNav link">Home</a>
+            <a href="#" class="link--mainNav link">About</a>
+            <a href="#" class="link--mainNav link">Pages</a>
+            <a href="#" class="link--mainNav link">Shop</a>
+            <a href="#" class="link--mainNav link">Blog</a>
         </div>
         <div>
             <!-- can a logo img be h1?? -->
@@ -26,13 +26,13 @@
         <div>
             <a href="#" class="icon--mainNav">
                 <img src="assets/icon-bag.png" alt="Shopping bag icon">
+                <div class="bagItemCount"><p>2</p></div>
             </a>
             <a href="#" class="icon--mainNav">
-                <i class="fa fa-search" aria-hidden="true"></i>
-
+                 <img src="assets/icon-search.png" alt="Search icon">
             </a>
             <a href="#" class="icon--mainNav">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <img src="assets/icon-bar.png" alt="Menu icon">
             </a>
         </div>
     </header>
@@ -43,16 +43,21 @@
             <h2 class="heading--heroMain">Living &#38; Styling with Plants</h2>
             <button class="btn__cta">Shop Now</button>
         </div>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        
     </section>
 
     <section class="categories">
         <div class="wrapper">
             <!-- the section description part -->
             <div class="wrap--categoriesDescription wrap--small">
+                <h3 class="heading--secondary">Welcome to</h3>
                 <h2 class="heading--section">The Home of Interior Plants</h2>
                 <p class="text--regular">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi dolorem enim ipsum laudantium voluptate nemo vel ratione odit corporis similique doloribus sed provident, explicabo amet dolor beatae facere sunt temporibus debitis eveniet! Saepe, numquam architecto. Dolores consectetur iure eius voluptates?</p>
                 <p class="text--author">James Brace . <span>Web Design</span></p>
             </div>
+
 
 
             <!-- the product grid part -->
@@ -71,7 +76,7 @@
                 </div>
                 <div class="categoryCard">
                     <div class="wrap--overlayText">
-                        <h4 class="heading--categories">Home Plants</h4>
+                        <h4 class="heading--categories">House Plants</h4>
                         <p class="text--itemCount">21 Items</p>
                     </div>
                 </div>
@@ -97,6 +102,8 @@
 
             <!-- flexbox gallery item(10 children) -->
             <div class="grid__popularProducts">
+
+
                 <!-- product # 1 -->
                 <div class="popularItem">
 
@@ -169,7 +176,7 @@
                     <!-- description -->
                     <div class="wrap--popularProductsItemDescription">
                         <a href="#" class="label--productName">Pebbled backpack</a>
-                        <p class="label--productPrice">$99.00</p>
+                        <p class="label--productPrice">$99.00<span class="text--strikeThrough">$79.00</span></p>
                     </div>
                 </div>
                 
@@ -218,7 +225,7 @@
                     <!-- description -->
                     <div class="wrap--popularProductsItemDescription">
                         <a href="#" class="label--productName">Pebbled backpack</a>
-                        <p class="label--productPrice">$99.00</p>
+                        <p class="label--productPrice">$99.00<span class="text--strikeThrough">$79.00</span></p>
                     </div>
                 </div>
                 
@@ -290,7 +297,7 @@
                     <!-- description -->
                     <div class="wrap--popularProductsItemDescription">
                         <a href="#" class="label--productName">Pebbled backpack</a>
-                        <p class="label--productPrice">$99.00</p>
+                        <p class="label--productPrice">$99.00<span class="text--strikeThrough">$79.00</span></p>
                     </div>
                 </div>
 
@@ -334,7 +341,7 @@
                     <!-- description -->
                     <div class="wrap--popularProductsItemDescription">
                         <a href="#" class="label--productName">Pebbled backpack</a>
-                        <p class="label--productPrice">$99.00</p>
+                        <p class="label--productPrice">$99.00<span class="text--strikeThrough">$79.00</span></p>
                     </div>
                 </div>
 
@@ -357,15 +364,23 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus est nostrum facere, quae voluptatem voluptatibus voluptas, quisquam dignissimos ipsa, ea fuga in culpa architecto enim dolores laboriosam assumenda maxime? Iste, ipsam quae ab dignissimos odio vitae voluptatibus autem dolore! Cumque eaque corrupti hic, dolore saepe doloremque ullam provident et ad.</p>
                     <cite class="text--author">Rosinante Brooks. Web Design</cite>
                 </blockquote>
+
+                <!-- gray circles link to more testimonials -->
+                <a href="#" class="nav__circle"></a>
+                <a href="#" class="nav__circle"></a>
+                <a href="#" class="nav__circle"></a>
+                <a href="#" class="nav__circle"></a>
             </div>
         </div>
 
         <!-- right side of section (video) -->
         <div class="testimonials__video">
             <div class="graphic--playButton">
-                <div><i class="fa fa-play" aria-hidden="true"></i></div>
+                <div>
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
             </div>
-            <div class="wrap--videoDescription">
+            <div class="wrap--testimonial">
                 <p class="display--graphic">Plants<span class="display--graphic">Store</span></p>
                 
                 <h6 class="display--small">Amazing Shop Themes</h6>
@@ -381,7 +396,7 @@
             <div class="layout__3col">
                 <!-- blog article blurb 1 -->
                 <div class="blogBlurb">
-                    <a href="#">
+                    <a href="#" class="imgFit">
                         <img src="assets/blog1.jpg" alt="">
                     </a>
                     <div class="wrap--blogBlurb">
@@ -397,10 +412,10 @@
 
                 <!-- blog article blurb 2 -->
                 <div class="blogBlurb">
-                    <a href="#">
+                    <a href="#" class="imgFit">
                         <img src="assets/blog2.jpg" alt="">
                     </a>
-                    <div class="wrap--blogBlurb">
+                    <div class="wrap--blogBlurb" >
                         <p class="text--regular">
                             December 14, 2017
                         </p>
@@ -413,7 +428,7 @@
 
                 <!-- blog article blurb 3 -->
                 <div class="blogBlurb">
-                    <a href="#">
+                    <a href="#" class="imgFit">
                         <img src="assets/blog3.jpg" alt="">
                     </a>
                     <div class="wrap--blogBlurb">
@@ -549,19 +564,31 @@
         <div class="wrap--footerSection4">
             <h6 class="heading--footer underline--short">Instagram</h6>
             <div class="layout__footerInsta">
-                <img src="assets/insta1.png" alt="">
-                <img src="assets/insta2.jpg" alt="">
-                <img src="assets/insta3.jpg" alt="">
-                <img src="assets/insta4.jpg" alt="">
-                <img src="assets/insta5.jpg" alt="">
-                <img src="assets/insta6.jpg" alt="">
+                <a href="#">
+                    <img src="assets/insta1.png" alt="">
+                </a>
+                <a href="#">
+                    <img src="assets/insta2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="assets/insta3.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="assets/insta4.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="assets/insta5.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="assets/insta6.jpg" alt="">
+                </a>
             </div>
             <div class="layout__floatRow clearfix">
-                <img src="assets/graphics-cc1.png" alt="Amex card" class="graphics--logo">
-                <img src="assets/graphics-cc2.png" alt="Discover card" class="graphics--logo">
-                <img src="assets/graphics-cc3.png" alt="Visa card" class="graphics--logo">
-                <img src="assets/graphics-cc4.png" alt="Mastercard" class="graphics--logo">
-                <img src="assets/graphics-cc5.png" alt="Debit card" class="graphics--logo">
+                <a href="#"><img src="assets/graphics-cc1.png" alt="Amex card"></a>
+                <a href="#"><img src="assets/graphics-cc2.png" alt="Discover card"></a>
+                <a href="#"><img src="assets/graphics-cc3.png" alt="Visa card"></a>
+                <a href="#"><img src="assets/graphics-cc4.png" alt="Mastercard"></a>
+                <a href="#"><img src="assets/graphics-cc5.png" alt="Debit card"></a>
             </div>
         </div>
 

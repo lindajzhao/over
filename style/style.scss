@@ -8,6 +8,15 @@
 /*----------------------------------------
     all sections
 ----------------------------------------*/
+.wrapper {
+    width: 80%;
+    max-width: 1150px;
+    margin: 0 auto;
+    @media (max-width: $break-large) {
+        width: 90%;
+    } 
+}
+
 
 .visuallyHidden {
     border: 0;
@@ -25,11 +34,19 @@ section {
 
 .wrap--small {
     width: 70%;
-    margin: 0 auto 80px;
+    margin: 0 auto 40px;
+    @media (max-width:$break-large) {
+        width: 100%;
+        // margin: 0 auto 40px;
+    }
 }
 
 img {
     width: 100%;
+}
+
+.display--graphic {
+    margin: 20px 0;
 }
 
 /*----------------------------------------
@@ -40,6 +57,7 @@ img {
     min-height: 500px;
     background-size: cover;
     @include flexCenter(row);
+    position: relative;
 }
 
 .wrap--hero {
@@ -47,17 +65,43 @@ img {
     @include flexCenter(column);
 }
 
+.fa.fa-arrow-left, .fa.fa-arrow-right {
+    @include setFont(2rem, $text-gray, 400);
+    position: absolute;
+    &:hover {
+        color: #000;
+    }
+}
 
+.fa.fa-arrow-left {
+    left: 10px;
+}
+
+.fa.fa-arrow-right {
+    right: 10px;
+}
 /*----------------------------------------
     Section - categories
 ----------------------------------------*/
 .categories .wrapper {
     @include flexCenter(column);
 }
+// position flower behind heading
+.categories .heading--section {
+    position: relative;
+}
+
+.categories .heading--section:after {
+    content: url("../assets/graphics-plant.svg");
+    position: absolute;
+    left: 40%;
+    bottom: -10px;
+}
 
 .wrap--categoriesDescription {
     @include flexCenter(column);
 }
+
 .btn__cart {
     @include btn--small(#fff, #000);
 }
@@ -103,34 +147,68 @@ img {
     // justify-items: stretch;
     // align-items: stretch;
     justify-content: stretch;
+    grid-template-areas: 
+    "airPlants officePlants housePlants"
+    "airPlants plantContainers plantContainers";
+    @media (max-width: $break-large) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+    @media (max-width: $break-small) {
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+    "airPlants airPlants"
+    "officePlants housePlants"
+    "plantContainers plantContainers";
+    }
 }
 
 .categoryCard {
     min-height: 260px;
     background-size: contain;
     @include flexCenter(row);
+    transition: 0.5s all; //?
 
     &:nth-of-type(1) {
-        background: url('../assets/airPlants.jpg') no-repeat center;
+        grid-area: airPlants;
+        background: url('../assets/airPlants.jpg') no-repeat;
         background-size: cover;
-        grid-row-end: span 2;
+        // grid-row-end: span 2;
+        &:hover {
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/airPlants.jpg') no-repeat;
+        }
+        
     }
 
     &:nth-of-type(2) {
-        background: url('../assets/officePlants.jpg') no-repeat center;
+        grid-area: officePlants;
+        background: url('../assets/officePlants.jpg') no-repeat;
+        &:hover {
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/officePlants.jpg') no-repeat;
+        }
     }
 
     &:nth-of-type(3) {
-        background: url('../assets/housePlants.jpg') no-repeat center;
+        grid-area: housePlants;
+        background: url('../assets/housePlants.jpg') no-repeat;
+        &:hover {
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/housePlants.jpg') no-repeat;
+        }
     }
 
     &:nth-of-type(4) {
+        grid-area: plantContainers;
         background: url('../assets/plantContainers.jpg') no-repeat center;
-        grid-column-start: span 2;
+        // grid-column-start: span 2;
+        &:hover {
+            background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/plantContainers.jpg') no-repeat center;
+        }
     }
 }
 .popularItem {
     position: relative;
+    // min-width: 160px;
 }
 
 // position hot, new, discount badges
@@ -164,9 +242,11 @@ img {
 
 .grid__popularProducts {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    // grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-gap: 20px;
+    @media (max-width: $break-large) {
+        // grid-gap: 10px;
+    }
 }
 
 .popularItem {
@@ -210,55 +290,103 @@ img {
 ----------------------------------------*/
 .layout__2col {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .layout__2col>div {
     // float: left;
     width: 50%;
-    // min-height: 900px;
+    min-height: 600px;
     @include flexCenter(column);
+    min-width: 450px;
+    @media (max-width: $break-large) {
+        width: 100%;
+        min-width: initial;
+    }
 }
+
+
 .testimonials__quote {
     background: url("../assets/bg-testimonial.jpg");
+    position: relative;
 }
+
 .wrap--testimonialsQuote {
     padding-top: 40px;
-    padding-bottom: 40px;
+    // padding-bottom: 40px;
 }
+
+//position gray dots to bottom of container
+.nav__circle {
+    width: 40px;
+    height: 40px;
+    background: $text-gray;
+    border-radius: 50%;
+    margin: 20px 10px;
+    transition: 0.4s all;
+
+    &:hover {
+        transform: scale(1.5);
+        background: $pink;
+    }
+}
+
+
+// video 
 
 .testimonials__video {
     background-size: cover;
-    background:linear-gradient(rgba(#000,0.4),rgba(#000,0.4)), url("../assets/bg-video.jpg");
+    background:linear-gradient(rgba(#000,0.4),rgba(#000,0.4)), url("../assets/bg-video.jpg") no-repeat;
 }
-//?? make border lighter
+
+// position pink quote after heading
+.testimonials__quote .heading--section {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.testimonials__quote .heading--section::after {
+    content: url("../assets/graphics-quotes.png");
+    position: absolute;
+    bottom: -50px;
+    left: 45%;
+}
+
+
+// make the play button
 .graphic--playButton {
     // outer circle
-    @include flexCenter(row);
+    // @include flexCenter(row);
     width: 100px;
     height: 100px;
     font-size: 30px;
     color: #fff;
     background: rgba($pink,0.5);
     border-radius: 50%;
+    display: block;
+    padding: 20px;
+    transition: ease 1s background;
 
     //inner circle
     div {
-        @extend .graphic--playButton;
-            width: 65px;
-            height: 65px;
-            background: $pink;
+        width: 60px;
+        height: 60px;
+        background: $pink;
+        border-radius: 50%;
+        display: inline-block;
+        @include flexCenter(row);
 
     }
 
-    &:hover div {
-        width: 100px;
-        height: 100px;
+    &:hover {
+        background: $pink;
     }
-
 }
 
+// add graphic between words "plants" and "store
 span.display--graphic::before {
     content: url("../assets/graphics-plantsStore.png");
+    margin: 0 10px;
 }
 
 
@@ -271,13 +399,33 @@ span.display--graphic::before {
     clear:both;
 }
 
+.imgFit {
+    width: 100%;
+    img {
+        object-fit: fill;
+    }
+}
+
 .layout__3col {
     display: flex;
+    justify-content: center;
+    @media (max-width: $break-small) {
+        flex-wrap: wrap;
+
+    }
+    
 }
 
 .layout__3col > div {
-    width: 33%;
-    margin-right: 30px;
+    width: calc(33% - (60px / 3));
+    margin: 10px 30px 10px 0;
+    @media (max-width: $break-large) {
+        margin-right: 10px;
+    }
+    @media (max-width: $break-small) {
+        margin-right: 0;
+        width: 100%;
+    }
 }
 
 .layout__3col > div:last-child {
@@ -339,16 +487,15 @@ span.display--graphic::before {
     width: 100%;
 }
 
-
-
 .wrap--brandIcons {
     @include flexCenter(row);
-    justify-content: space-between;
-    // margin-bottom: 120px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.graphics--logo {
+.graphics--logo, .icon {
     width: auto;
+    margin: 20px;
 }
 
 .layout__floatRow > * {
