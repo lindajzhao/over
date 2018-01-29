@@ -39,3 +39,7 @@ button, input[type="submit"] {
             @include btn--large(#fff, #000);
         }
 }
+
+.btn__form {
+    @include btn--small(#fff, #000);
+}

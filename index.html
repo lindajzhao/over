@@ -11,6 +11,7 @@
 
 </head>
 
+<!-- questions -->
 <body>
     <header class="wrapper">
         <div>
@@ -21,7 +22,6 @@
             <a href="#" class="link--mainNav link">Blog</a>
         </div>
         <div>
-            <!-- can a logo img be h1?? -->
             <img src="assets/logo.png" alt="Over company logo" class="logo--mainNav graphics--logo">
         </div>
         <div>
@@ -29,9 +29,20 @@
                 <img src="assets/icon-bag.png" alt="Shopping bag icon">
                 <div class="bagItemCount"><p>2</p></div>
             </a>
-            <a href="#" class="icon--mainNav">
-                 <img src="assets/icon-search.png" alt="Search icon">
-            </a>
+
+
+            <!-- search button toggles to target and show form -->
+            <label for="toggle">
+                <img src="assets/icon-search.png" alt="Search icon">
+            </label>
+            <!-- search form -->
+            <input type="checkbox" id="toggle" name="toggle" class="icon--mainNav">
+            <form class="search">
+                <label for="searchField" class="visuallyHidden">Search:</label>
+                <input type="text" id="searchField" class="input--border-bottom">
+                <input type="submit" class="btn__form">
+            </form>
+
             <a href="#" class="icon--mainNav">
                 <img src="assets/icon-bar.png" alt="Menu icon">
             </a>
@@ -110,7 +121,7 @@
                 <div class="popularItem">
 
                     <!-- photo area + overlay-->
-                    < class="overlayArea">
+                    <div class="overlayArea">
                         <img src="assets/featured1.jpg" alt="">
 
                         <!-- overlay -->
@@ -122,8 +133,8 @@
                     </div>
 
                     <!-- callout badges -->
-                    <div class="badge--hot badge1 badge">Hot</div>
-                    <div class="badge--new badge2 badge">New</div>
+                    <div class="badge--hot badge">Hot</div>
+                    <div class="badge--new badge">New</div>
 
 
                      <!-- description -->
@@ -172,7 +183,7 @@
                     </div>
                 
                     <!-- callout badges -->
-                    <div class="badge--discount badge1 badge">-20%</div>
+                    <div class="badge--discount badge">-20%</div>
                 
                 
                     <!-- description -->
@@ -220,7 +231,7 @@
                     </div>
                 
                     <!-- callout badges -->
-                    <div class="badge--discount badge1 badge">-20%</div>
+                    <div class="badge--discount badge">-20%</div>
 
             
                 
@@ -294,7 +305,7 @@
                     </div>
                 
                     <!-- callout badges -->
-                    <div class="badge--discount badge1 badge">-20%</div>
+                    <div class="badge--discount badge">-20%</div>
              
                     <!-- description -->
                     <div class="wrap--popularProductsItemDescription">

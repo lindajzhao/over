@@ -207,6 +207,7 @@ img {
 }
 
 // position hot, new, discount badges
+// 1st badge at 5px and 2nd badge at 30px
 .badge {
     // relative to popularItem
     position: absolute;
@@ -218,13 +219,9 @@ img {
     top: 5px;
 }
 
-// .badge1 {
-//     top: 5px;
-// }
-
-// .badge2 {
-//     top: 30px;
-// }
+.badge:nth-of-type(3) {
+    top: 30px;
+}
 
 /*----------------------------------------
     Section - Popular Products

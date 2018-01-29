@@ -365,6 +365,16 @@ button, input[type="submit"] {
       .btn__cart:hover, .btn__cart:focus {
         background: white; } }
 
+.btn__form {
+  background: #fff;
+  color: #000;
+  padding: 0.8rem;
+  -webkit-transition: 0.5s background;
+  -o-transition: 0.5s background;
+  transition: 0.5s background; }
+  .btn__form:hover, .btn__form:focus {
+    background: #79dad6; }
+
 header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -374,9 +384,11 @@ header {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  overflow: hidden;
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  position: relative; }
   @media (max-width: 1000px) {
     header {
       -webkit-flex-wrap: wrap;
@@ -459,6 +471,35 @@ header div:last-of-type {
   right: -3px; }
   .bagItemCount p {
     font-size: 11px; }
+
+#toggle {
+  display: none; }
+
+label[for="toggle"] img {
+  content: url("../../assets/icon-search.png");
+  width: 24px;
+  height: 24px;
+  display: inline-block; }
+
+form.search {
+  border: 1px cyan solid;
+  position: absolute;
+  right: -100%;
+  top: 60px;
+  list-style: none;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  z-index: 50;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
+#searchField {
+  width: 80%; }
+
+input:checked + form {
+  right: 0; }
 
 footer {
   margin: 60px 0;
@@ -783,6 +824,9 @@ img {
 
 .badge:nth-of-type(2) {
   top: 5px; }
+
+.badge:nth-of-type(3) {
+  top: 30px; }
 
 /*----------------------------------------
     Section - Popular Products
