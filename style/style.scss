@@ -52,9 +52,17 @@ img {
     width: 100%;
 }
 
+
 /*----------------------------------------
     Section - hero
 ----------------------------------------*/
+// add space at the top of <body> for fixed mobile menu
+@media (max-width:$break-med) {
+    section.hero {
+        margin-top: 145px;
+    }
+}
+
 .hero {
     background:linear-gradient(rgba(#fff,0.4),rgba(#fff,0.4)), url("../assets/hero.jpg");
     min-height: 500px;

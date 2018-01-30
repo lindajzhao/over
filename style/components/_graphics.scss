@@ -6,10 +6,12 @@
 
 .graphics--logo {
     margin: 20px 0;
+    @media (max-width: $break-med) {
+        margin: 10px 0;
+    }
 }
 
 .icon--social {
-    
     &:hover i.fa, &:focus i.fa {
         transform: scale(1.3);
         color: $pink;

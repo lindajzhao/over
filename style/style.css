@@ -403,7 +403,8 @@ header {
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-      position: fixed; } }
+      position: fixed;
+      top: 0; } }
 
 header > div {
   -webkit-box-flex: 1;
@@ -431,23 +432,24 @@ header > div {
   padding: 10px 0; }
   @media (max-width: 700px) {
     header > div {
-      padding: 0; } }
+      padding: 5px 0; } }
 
-header div:first-of-type {
+header > div:first-of-type {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start; }
   @media (max-width: 700px) {
-    header div:first-of-type {
+    header > div:first-of-type {
       width: 50%;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
       -ms-flex-pack: center;
-      justify-content: center; } }
+      justify-content: center;
+      padding: 0; } }
 
 @media (max-width: 700px) {
-  header div:nth-of-type(2) {
+  header > div:nth-of-type(2) {
     width: 100%;
     display: inline;
     -webkit-box-ordinal-group: 0;
@@ -455,13 +457,13 @@ header div:first-of-type {
     -ms-flex-order: -1;
     order: -1; } }
 
-header div:last-of-type {
+header > div:last-of-type {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end; }
   @media (max-width: 700px) {
-    header div:last-of-type {
+    header > div:last-of-type {
       width: 50%;
       display: inline; } }
 
@@ -481,7 +483,7 @@ header div:last-of-type {
   padding-top: 3px;
   position: absolute;
   top: -3px;
-  right: -3px; }
+  right: -6px; }
   .bagItemCount p {
     font-size: 11px; }
 
@@ -571,6 +573,9 @@ footer > div {
 
 .graphics--logo {
   margin: 20px 0; }
+  @media (max-width: 700px) {
+    .graphics--logo {
+      margin: 10px 0; } }
 
 .icon--social:hover i.fa, .icon--social:focus i.fa {
   -webkit-transform: scale(1.3);
@@ -667,6 +672,10 @@ img {
 /*----------------------------------------
     Section - hero
 ----------------------------------------*/
+@media (max-width: 700px) {
+  section.hero {
+    margin-top: 145px; } }
+
 .hero {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4))), url("../assets/hero.jpg");
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../assets/hero.jpg");

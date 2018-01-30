@@ -16,31 +16,32 @@ header {
     @media (max-width: $break-med) {
         flex-wrap: wrap;
         position: fixed;
+        top: 0;
     }
 }
 
 
 header > div {
     flex: 1 1 500px;
-    // width: 33%;
-    // float: left;
+
     @include flexCenter(row);
     padding: 10px 0;
-    @media (max-width:$break-med) {
-        padding: 0;
+    @media (max-width: $break-med) {
+        padding: 5px 0;
     }
 
 }
 // left - Home, About etc..
-header div:first-of-type {
+header>div:first-of-type {
     justify-content: flex-start;
     @media (max-width: $break-med) {
         width: 50%;
         justify-content: center;
+        padding: 0;
     }
 } 
 //middle - Logo image
-header div:nth-of-type(2) {
+header>div:nth-of-type(2) {
     // at beakpoint, move logo to front
     @media (max-width: $break-med) {
         width: 100%;
@@ -50,7 +51,7 @@ header div:nth-of-type(2) {
 }
 
 //right- cart, hamburger
-header div:last-of-type {
+header>div:last-of-type {
     justify-content: flex-end;
     @media (max-width: $break-med) {
         width: 50%;
@@ -81,7 +82,7 @@ header div:last-of-type {
 
     position: absolute;
     top: -3px;
-    right: -3px;
+    right: -6px;
     p {
         font-size: 11px;
     }
