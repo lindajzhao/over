@@ -46,6 +46,9 @@ li {
         @include setFont(6rem, #000, 500);
         text-align: center;
         margin-bottom: 60px;
+        @media (max-width: $break-med) {
+            font-size: 4rem;
+        }
     }
 
     &heroSecondary {
@@ -123,8 +126,9 @@ li {
     @include setFont(1.4rem, #000, 400);
     border-bottom: 1px solid transparent;
     padding: 0.3rem 0;
+    transition: 0.5s all;
 
-    &:hover {
+    &:hover, &:focus {
         border-bottom: 1px solid #000;
         color: $pink;
     }
@@ -148,10 +152,9 @@ li {
     &--footer {
         color: $text-gray;
         display: inline-block;
-
+        border-bottom: none;
         &:hover {
-            font-weight: 500;
-            border: none;
+            border-bottom: none;
         }
     }
 
@@ -192,6 +195,7 @@ blockquote {
         @include setFont(6vw, #fff, 400);
         font-family: "PressStyle", sans-serif;
         text-transform: uppercase;
+        margin: 20px 0;
         // display: inline;
         @media (max-width: $break-large) {
             font-size: 10vw;

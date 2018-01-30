@@ -1,5 +1,6 @@
 // header for all pages 
 
+// at middle breakpoint, move padding + wrap + logo on top and other 2 sections side by side on 2nd row
 
 header {
     display: flex;
@@ -9,12 +10,15 @@ header {
     
     flex-wrap: nowrap;
     position: relative;
-    @media (max-width: $break-large) {
-    flex-wrap: wrap;
-    }
+    background: white;
+    z-index: 10;
     
-
+    @media (max-width: $break-med) {
+        flex-wrap: wrap;
+        position: fixed;
+    }
 }
+
 
 header > div {
     flex: 1 1 500px;
@@ -22,29 +26,33 @@ header > div {
     // float: left;
     @include flexCenter(row);
     padding: 10px 0;
+    @media (max-width:$break-med) {
+        padding: 0;
+    }
 
 }
-
+// left - Home, About etc..
 header div:first-of-type {
     justify-content: flex-start;
-    @media (max-width: $break-large) {
-        width: 100%;
+    @media (max-width: $break-med) {
+        width: 50%;
         justify-content: center;
-        order: 3;
-
     }
 } 
-
+//middle - Logo image
 header div:nth-of-type(2) {
-    @media (max-width: $break-large) {
-        width: 50%;
+    // at beakpoint, move logo to front
+    @media (max-width: $break-med) {
+        width: 100%;
         display: inline;
+        order: -1;
     }
 }
 
+//right- cart, hamburger
 header div:last-of-type {
     justify-content: flex-end;
-    @media (max-width: $break-large) {
+    @media (max-width: $break-med) {
         width: 50%;
         display: inline;
     }
@@ -63,6 +71,7 @@ header div:last-of-type {
     }
 }
 
+//position the blue circle with item count
 .bagItemCount {
     width: 20px;
     height: 20px;
@@ -79,9 +88,8 @@ header div:last-of-type {
 }
 
 
-// make search bar slide out
+// make search bar slide out when checked
 #toggle {
-
     display: none;
 }
 
@@ -92,24 +100,48 @@ label[for="toggle"] img {
     display: inline-block;
 }
 
+//style form and move it out of screen to the top
 form.search {
-    border: 1px cyan solid;
+    background: white;
     position: absolute;
-	right: -100%;
-	top: 60px;
-	list-style: none;
-	width: 30%;
-	margin: 0;
-	padding: 0;
-	z-index: 50;
-	transition: all 1s;
+
+	left: 33.333%;
+	top: -120%;
+    // list-style: none;
+    
+    width: 33.333%;
+    min-height: 90px;
+    // padding centers form fields vertically
+    padding: 27px 0;
+    
+    z-index: 50;
+    
+    transition: all 1s;
+        @media (max-width: $break-med) {
+            left: 0;
+            width: 100%;
+            min-height: 68px;
+            padding: 16px 0;
+        }
+    
 }
 
 #searchField {
     width: 80%;
 }
 
-// side out when toggled
+// slide form down
 input:checked + form {
-	right: 0;
+	top: 0;
+}
+
+form input {
+    min-height: 35px;
+    &[type="submit"], button {
+        border: 1px solid $blue;
+    }
+
+    &[type="text"] {
+        padding: 0 10px;
+    }
 }

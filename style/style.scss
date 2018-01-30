@@ -5,6 +5,7 @@
 @import "components/buttons";
 @import "components/header";
 @import "components/footer";
+@import "components/graphics";
 
 /*----------------------------------------
     all sections
@@ -15,6 +16,13 @@
     margin: 0 auto;
     @media (max-width: $break-large) {
         width: 95%;
+    } 
+}
+
+// header wrapper will be full width in mobile
+header.wrapper {
+    @media (max-width: $break-med) {
+        width: 100%;
     } 
 }
 
@@ -44,10 +52,6 @@ img {
     width: 100%;
 }
 
-.display--graphic {
-    margin: 20px 0;
-}
-
 /*----------------------------------------
     Section - hero
 ----------------------------------------*/
@@ -64,10 +68,11 @@ img {
     @include flexCenter(column);
 }
 
+// position arrows on either side
 .fa.fa-arrow-left, .fa.fa-arrow-right {
     @include setFont(2rem, $text-gray, 400);
     position: absolute;
-    &:hover {
+    &:hover, &:focus {
         color: #000;
     }
 }
@@ -79,6 +84,26 @@ img {
 .fa.fa-arrow-right {
     right: 10px;
 }
+
+// position indicator dots
+.carouselNav {
+    position: absolute;
+    bottom: 10px;
+}
+
+.indicatorDot {
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 50%;
+    margin: 5px;
+    display: inline-block;
+}
+
+.indicatorDot.active {
+    background: $text-gray;
+}
+
 /*----------------------------------------
     Section - categories
 ----------------------------------------*/
@@ -106,6 +131,8 @@ img {
     background: #fff;
 }
 
+
+//targets image+overlay, which is the same area
 .overlayArea {
     position: relative;
     line-height: 0;
@@ -127,24 +154,22 @@ img {
     transition: all 0.4s ease;
 }
 // show overlay on hover
-.overlayArea:hover .popularItem__overlay {
+.overlayArea:hover .popularItem__overlay, .overlayArea:focus .popularItem__overlay {
    visibility: visible;
    opacity:1;
 }
 
-
+// layour for the 4 category cards + at breakpoints
 .layout__categories {
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr 1fr; 
     width: 100%;
-    // justify-items: stretch;
-    // align-items: stretch;
     justify-content: stretch;
     grid-template-areas: 
-    "airPlants officePlants housePlants"
-    "airPlants plantContainers plantContainers";
+        "airPlants officePlants housePlants"
+        "airPlants plantContainers plantContainers";
     @media (max-width: $break-large) {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 15px;
@@ -153,13 +178,13 @@ img {
         grid-gap: 15px;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-    "airPlants airPlants"
-    "officePlants housePlants"
-    "plantContainers plantContainers";
+            "airPlants airPlants"
+            "officePlants housePlants"
+            "plantContainers plantContainers";
     }
 }
 
-// 4 categoryCards
+// 4 categoryCards, each has a different bg image
 .categoryCard {
     min-height: 260px;
     background-size: contain;
@@ -170,7 +195,7 @@ img {
         background: linear-gradient(rgba(#000, 0.0), rgba(#000, 0.0)), url('../assets/airPlants.jpg') no-repeat center;
         background-size: cover;
 
-        &:hover {
+        &:hover, &:focus {
             background: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)),
                url('../assets/airPlants.jpg') no-repeat center;
                background-size: cover;
@@ -188,7 +213,7 @@ img {
     &:nth-of-type(3) {
         grid-area: housePlants;
         background: url('../assets/housePlants.jpg') no-repeat center;
-        &:hover {
+        &:hover, &:focus {
             background:linear-gradient(rgba(#000,0.2),rgba(#000,0.2)), url('../assets/housePlants.jpg') no-repeat center;
         }
     }
@@ -202,6 +227,28 @@ img {
         }
     }
 }
+
+/*----------------------------------------
+    Section - Popular Items
+----------------------------------------*/
+
+.nav__section {
+    margin: 0 auto 40px;
+    display: block;
+    text-align: center;
+}
+
+.grid__popularProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 20px;
+    @media (max-width: $break-large) {
+        // grid-gap: 10px;
+    }
+}
+
+
+// 10x .popularItem
 .popularItem {
     position: relative;
 }
@@ -223,29 +270,7 @@ img {
     top: 30px;
 }
 
-/*----------------------------------------
-    Section - Popular Products
-----------------------------------------*/
-
-.nav__section {
-    margin: 0 auto 40px;
-    display: block;
-    text-align: center;
-}
-
-.grid__popularProducts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-gap: 20px;
-    @media (max-width: $break-large) {
-        // grid-gap: 10px;
-    }
-}
-
-.popularItem {
-    // border: solid 1px cyan;
-}
-
+// define color of each type of badge using mixin
 .badge-- {
     &hot {
         @include badge($pink);
@@ -287,7 +312,7 @@ img {
     }
 }
 
-
+// testimonials - the left side
 .testimonials__quote {
     background: url("../assets/bg-testimonial.jpg");
     position: relative;
@@ -295,7 +320,6 @@ img {
 
 .wrap--testimonialsQuote {
     padding-top: 40px;
-    // padding-bottom: 40px;
 }
 
 //position gray dots to bottom of container
@@ -307,14 +331,14 @@ img {
     margin: 20px 10px;
     transition: 0.4s all;
 
-    &:hover {
+    &:hover, &:focus {
         transform: scale(1.5);
         background: $pink;
     }
 }
 
 
-// video 
+// video - the right side
 
 .testimonials__video {
     
@@ -335,37 +359,6 @@ img {
     left: 45%;
 }
 
-
-// make the play button
-.graphic--playButton {
-    // outer circle
-    // @include flexCenter(row);
-    width: 100px;
-    height: 100px;
-    font-size: 30px;
-    color: #fff;
-    background: rgba($pink,0.5);
-    border-radius: 50%;
-    display: block;
-    padding: 20px;
-    transition: ease 1s background;
-
-    //inner circle
-    div {
-        width: 60px;
-        height: 60px;
-        background: $pink;
-        border-radius: 50%;
-        display: inline-block;
-        @include flexCenter(row);
-
-    }
-
-    &:hover {
-        background: $pink;
-    }
-}
-
 // add graphic between words "plants" and "store
 span.display--graphic::before {
     content: url("../assets/graphics-plantsStore.png");
@@ -382,15 +375,12 @@ span.display--graphic::before {
     clear:both;
 }
 
-.imgFit {
-    width: 100%;
-    
+.imgHover {  
     img {
-        object-fit: fill;
         transition: 0.5s opacity;
     }
     
-    &:hover img {
+    &:hover img, &:focus img {
         opacity: 0.6;
     }
 }
@@ -400,7 +390,6 @@ span.display--graphic::before {
     justify-content: center;
     @media (max-width: $break-small) {
         flex-wrap: wrap;
-
     }
     
 }
@@ -436,12 +425,13 @@ span.display--graphic::before {
 .newsletter {
     padding-bottom: 80px;
     border-bottom: 1px $light-gray solid;
-
 }
+
 .newsletter p {
     text-align: center;
 }
 
+// Newsletter form: 
 .form__newsletter {
     width: 70%;
     margin: 0 auto 100px;
@@ -449,18 +439,11 @@ span.display--graphic::before {
 }
 
 .form__newsletter button {
-    // float: right;
-    // width: 10%;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 2px;
+    bottom: 5px;
     padding: 5px 5px 0 5px;
 }
-
-// .form__newsletter input {
-//     float: left;
-//     width: 90%;
-// }
 
 .fa.fa-envelope {
     color: white;
@@ -482,15 +465,6 @@ span.display--graphic::before {
     flex-wrap: wrap;
 }
 
-.graphics--logo, .icon {
-    width: auto;
-    margin: 20px;
-}
-
-.graphics--logo {
-    margin: 20px 0;
-}
-
 .layout__floatRow > * {
     float: left;
     margin-right: 10px;
@@ -499,13 +473,4 @@ span.display--graphic::before {
         margin-right: 0;
     }
 }
-
-.fa.icon--social {
-    @include setFont(1.9rem, #000, 400);
-    padding: 1rem;
-}
-
-
-
-
 
