@@ -12,6 +12,8 @@ header {
     position: relative;
     background: white;
     z-index: 10;
+
+    
     
     @media (max-width: $break-med) {
         flex-wrap: wrap;
@@ -20,10 +22,9 @@ header {
     }
 }
 
-
+// all 3 divs
 header > div {
     flex: 1 1 500px;
-
     @include flexCenter(row);
     padding: 10px 0;
     @media (max-width: $break-med) {
@@ -32,30 +33,40 @@ header > div {
 
 }
 // left - Home, About etc..
-header>div:first-of-type {
+header .nav__main {
     justify-content: flex-start;
     @media (max-width: $break-med) {
-        width: 50%;
-        justify-content: center;
-        padding: 0;
+        // MOBILE NAV MENU: make vertical
+        width: 100vw;
+        flex-flow: column wrap;
+        display: none;
+        flex-wrap: wrap;
     }
+
+    &.open {
+        display: block;
+    }
+
 } 
+
 //middle - Logo image
 header>div:nth-of-type(2) {
     // at beakpoint, move logo to front
     @media (max-width: $break-med) {
         width: 100%;
         display: inline;
-        order: -1;
+        order: -2;
     }
 }
 
 //right- cart, hamburger
 header>div:last-of-type {
     justify-content: flex-end;
+    z-index: 10;
     @media (max-width: $break-med) {
         width: 50%;
         display: inline;
+        order: -1;
     }
 } 
 
@@ -87,7 +98,6 @@ header>div:last-of-type {
         font-size: 11px;
     }
 }
-
 
 // make search bar slide out when checked
 #toggle {
@@ -123,15 +133,14 @@ form.search {
             width: 100%;
             min-height: 68px;
             padding: 16px 0;
-        }
-    
+        }  
 }
 
 #searchField {
     width: 80%;
 }
 
-// slide form down
+// slide search form down
 input:checked + form {
 	top: 0;
 }

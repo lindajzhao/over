@@ -14,7 +14,7 @@
 <!-- questions -->
 <body>
     <header class="wrapper">
-        <div>
+        <div class="nav__main">
             <a href="#" class="link--mainNav link">Home</a>
             <a href="#" class="link--mainNav link">About</a>
             <a href="#" class="link--mainNav link">Pages</a>
@@ -43,7 +43,9 @@
                 <input type="submit" class="btn__form">
             </form>
 
-            <a href="#" class="icon--mainNav">
+
+            <!-- clicking hamburger icon opens mobile menu -->
+            <a href="#" class="icon--mainNav js--hamburger">
                 <img src="assets/icon-bar.png" alt="Menu icon">
             </a>
         </div>
@@ -614,5 +616,10 @@
         </div>
 
     </footer>
+
+    <!-- javascript link to jquery and file -->
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

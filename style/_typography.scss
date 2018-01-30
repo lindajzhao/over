@@ -139,8 +139,10 @@ li {
         margin: 0 3rem;
         display: inline-block;
         border-bottom: 1px solid transparent;
+
         @media (max-width: $break-med) {
             margin: 0 1rem;
+
         }
 
         &:hover, &:focus {
@@ -163,6 +165,14 @@ li {
         text-transform: uppercase;
         font-weight: 700;
         margin-right: 10px;
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+        @media (max-width:$break-med) {
+            font-size: 30px;
+            width: 100%;
+            
+        }
     }
 
 }
