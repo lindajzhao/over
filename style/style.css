@@ -444,7 +444,12 @@ header .nav__main {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row no-wrap;
+  -ms-flex-flow: row no-wrap;
+  flex-flow: row no-wrap; }
   @media (max-width: 700px) {
     header .nav__main {
       width: 100vw;
@@ -797,7 +802,6 @@ img {
   position: relative; }
 
 .categories .heading--section:after {
-  content: url("../assets/graphics-plant.svg");
   position: absolute;
   left: 40%;
   bottom: -10px; }

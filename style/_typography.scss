@@ -39,7 +39,7 @@ li {
 
 
 
-// heading
+// headings
 
 .heading-- {
     &heroMain {
@@ -194,12 +194,14 @@ li {
     }
 }
 
+// blockquotes
 blockquote {
     @include setFont(1.6rem, #000, 400);
     font-style: italic;
     line-height: 2;
 }
 
+// fancy display font used in video section
 .display-- {
     &graphic {
         @include setFont(6vw, #fff, 400);

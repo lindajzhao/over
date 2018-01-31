@@ -35,6 +35,7 @@ header > div {
 // left - Home, About etc..
 header .nav__main {
     justify-content: flex-start;
+    flex-flow: row no-wrap;
     @media (max-width: $break-med) {
         // MOBILE NAV MENU: make vertical
         width: 100vw;
