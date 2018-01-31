@@ -513,7 +513,6 @@ header > div:last-of-type {
   display: none; }
 
 label[for="toggle"] img {
-  content: url("../../assets/icon-search.png");
   width: 24px;
   height: 24px;
   display: inline-block; }
@@ -550,23 +549,22 @@ form input {
   form input[type="text"] {
     padding: 0 10px; }
 
-footer {
-  margin: 60px 0;
+.layout__footerGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas: "address address address address address services services account account insta insta insta"; }
   @media (max-width: 1000px) {
-    footer {
+    .layout__footerGrid {
       grid-gap: 10px;
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas: "address address address address" "services account insta insta"; } }
   @media (max-width: 550px) {
-    footer {
+    .layout__footerGrid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: "address address" "services account"  "insta insta"; } }
 
-footer > div {
-  margin: 10px; }
+.layout__footerGrid.wrapper {
+  margin: 80px auto; }
 
 .wrap--footerSection1 {
   grid-area: address; }
@@ -586,8 +584,20 @@ footer > div {
   grid-gap: 10px;
   margin-bottom: 30px; }
 
-.wrap-cc img {
+.wrap--cc img {
   height: 24px; }
+
+.copyright {
+  border-top: 1px solid #f5efef;
+  padding: 20px 0; }
+  .copyright .wrapper > div {
+    display: inline-block; }
+    .copyright .wrapper > div:first-of-type {
+      float: left; }
+    .copyright .wrapper > div:last-of-type {
+      float: right; }
+  .copyright p {
+    margin: 0; }
 
 .graphics--logo, .icon {
   width: auto;
@@ -682,8 +692,8 @@ section {
   margin-bottom: 50px; }
 
 .wrap--small {
-  width: 70%;
-  margin: 0 auto 40px; }
+  width: 90%;
+  margin: 0 auto; }
   @media (max-width: 700px) {
     .wrap--small {
       width: 95%; } }
@@ -802,6 +812,7 @@ img {
   position: relative; }
 
 .categories .heading--section:after {
+  content: url("../assets/graphics-plant.svg");
   position: absolute;
   left: 40%;
   bottom: -10px; }
@@ -1074,10 +1085,8 @@ img {
 
 .testimonials__quote {
   background: url("../assets/bg-testimonial.jpg");
-  position: relative; }
-
-.wrap--testimonialsQuote {
-  padding-top: 40px; }
+  position: relative;
+  padding: 70px 0; }
 
 .nav__circle {
   width: 40px;
@@ -1103,7 +1112,7 @@ img {
 
 .testimonials__quote .heading--section {
   position: relative;
-  margin-bottom: 80px; }
+  margin-bottom: 60px; }
 
 .testimonials__quote .heading--section::after {
   content: url("../assets/graphics-quotes.png");

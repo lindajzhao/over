@@ -41,8 +41,8 @@ section {
 }
 
 .wrap--small {
-    width: 70%;
-    margin: 0 auto 40px;
+    width: 90%;
+    margin: 0 auto;
     @media (max-width:$break-med) {
         width: 95%;
     }
@@ -124,7 +124,7 @@ img {
 }
 
 .categories .heading--section:after {
-    // content: url("../assets/graphics-plant.svg");
+    content: url("../assets/graphics-plant.svg");
     position: absolute;
     left: 40%;
     bottom: -10px;
@@ -324,11 +324,9 @@ img {
 .testimonials__quote {
     background: url("../assets/bg-testimonial.jpg");
     position: relative;
+    padding: 70px 0;
 }
 
-.wrap--testimonialsQuote {
-    padding-top: 40px;
-}
 
 //position gray dots to bottom of container
 .nav__circle {
@@ -349,7 +347,6 @@ img {
 // video - the right side
 
 .testimonials__video {
-    
     background:linear-gradient(rgba(#000,0.4),rgba(#000,0.4)), url("../assets/bg-video.jpg") no-repeat;
     background-size: cover;
 }
@@ -357,7 +354,8 @@ img {
 // position pink quote after heading
 .testimonials__quote .heading--section {
     position: relative;
-    margin-bottom: 80px;
+    // margin-bottom to create space for quotes
+    margin-bottom: 60px;
 }
 
 .testimonials__quote .heading--section::after {

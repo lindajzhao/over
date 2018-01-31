@@ -1,7 +1,6 @@
 
 // 12 col then 4 col then 2 col footer
-footer {
-    margin: 60px 0;
+.layout__footerGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     // grid-gap: 10px;
@@ -23,11 +22,10 @@ footer {
         "insta insta";
     }
 }
+.layout__footerGrid.wrapper {
+    margin: 80px auto;
 
-footer > div {
-    margin: 10px;
 }
-
 .wrap--footerSection1 {
     grid-area: address;
 }
@@ -52,7 +50,30 @@ footer > div {
     margin-bottom: 30px;
 }
 
-.wrap-cc img{
+.wrap--cc img{
     height: 24px;
 }
 
+// Copyright bar at the bottom
+
+.copyright {
+    border-top: 1px solid $light-gray;
+    padding: 20px 0;
+    .wrapper > div {
+        display: inline-block;
+
+
+        &:first-of-type {
+            float: left;
+        }
+
+        &:last-of-type {
+            float: right;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+}
