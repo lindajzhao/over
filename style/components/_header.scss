@@ -11,8 +11,8 @@ header {
     flex-wrap: nowrap;
     position: relative;
     background: white;
-    z-index: 10;
-
+    position: relative;
+    z-index: 100;
     
     
     @media (max-width: $break-med) {
@@ -35,10 +35,10 @@ header > div {
 // left - Home, About etc..
 header .nav__main {
     justify-content: flex-start;
-    flex-flow: row no-wrap;
+    flex-flow: row nowrap;
     @media (max-width: $break-med) {
         // MOBILE NAV MENU: make vertical
-        width: 100vw;
+        width: 50vw;
         flex-flow: column wrap;
         display: none;
         flex-wrap: wrap;
@@ -54,7 +54,7 @@ header .nav__main {
 header>div:nth-of-type(2) {
     // at beakpoint, move logo to front
     @media (max-width: $break-med) {
-        width: 100%;
+        width: 50vw;
         display: inline;
         order: -2;
     }
@@ -105,10 +105,13 @@ header>div:last-of-type {
     display: none;
 }
 
-label[for="toggle"] img {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
+label[for="toggle"] {
+    cursor: pointer;
+    img {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+    }
 }
 
 //style form and move it out of screen to the top

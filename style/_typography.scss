@@ -250,3 +250,10 @@ blockquote {
         margin-top: 10px; //some space between line and text
     }
 }
+
+p a {
+    color: $pink;
+    &:visited {
+        color:$blue;
+    }
+}

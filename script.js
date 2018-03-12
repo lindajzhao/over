@@ -6,4 +6,12 @@ $(function () {
             $(".nav__main").toggleClass("open");
         }
     });
+
+    //flickity
+    $('.hero-carousel').flickity({
+        cellAlign: 'center',
+        autoPlay: 2000,
+        prevNextButtons: false,
+
+    });
 });

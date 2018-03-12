@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project 2 - Over</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src='https://use.fontawesome.com/8d93889061.js'></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
 
 </head>
@@ -52,22 +53,25 @@
     </header>
 
     <section class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-cell">
+                <img src="/assets/hero-1.png" alt="white and pink roses">
+            </div>
+            <div class="carousel-cell">
+                <img src="/assets/hero-2.png" alt="white and pink roses">
+            </div>
+            <div class="carousel-cell">
+                <img src="/assets/hero-3.png" alt="white and pink roses">
+            </div>
+            <div class="carousel-cell">
+                <img src="/assets/hero-4.png" alt="white and pink roses">
+            </div>
+        </div>
         <div class="wrap--hero">
             <h3 class="heading--heroSecondary">Over Collection 2017</h3>
             <h2 class="heading--heroMain">Living &#38; Styling with Plants</h2>
             <button class="btn__cta">Shop Now</button>
         </div>
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-
-        <!-- indicator dots -->
-        <div class="carouselNav">
-            <div class="indicatorDot"></div>
-            <div class="indicatorDot active"></div>
-            <div class="indicatorDot"></div>
-            <div class="indicatorDot"></div>
-        </div>
-        
     </section>
 
     <section class="categories">
@@ -629,8 +633,15 @@
         </div>
     </footer>
 
-    <!-- javascript link to jquery and file -->
+    <!-- font awesome -->
+    <script src='https://use.fontawesome.com/8d93889061.js'></script>
+
+    <!-- jquery -->
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
+    <!-- flickity -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <script src="script.js"></script>
 
 </body>

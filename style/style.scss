@@ -21,8 +21,10 @@
 
 // header wrapper will be full width in mobile
 header.wrapper {
+    // max-height: 62px;
     @media (max-width: $break-med) {
         width: 100%;
+        max-height: initial;
     } 
 }
 
@@ -64,52 +66,36 @@ img {
 }
 
 .hero {
-    background:linear-gradient(rgba(#fff,0.4),rgba(#fff,0.4)), url("../assets/hero.jpg");
-    min-height: 500px;
-    background-size: cover;
-    @include flexCenter(row);
+
     position: relative;
 }
 
-.wrap--hero {
-    margin: 50px;
-    @include flexCenter(column);
-}
-
-// position arrows on either side
-.fa.fa-arrow-left, .fa.fa-arrow-right {
-    @include setFont(2rem, $text-gray, 400);
+.hero-carousel {
     position: absolute;
-    &:hover, &:focus {
-        color: #000;
+    top: 0;
+    background-size: cover;
+    height: 100%;
+}
+.carousel-cell {
+    width: 100%;
+    img {
+        object-fit: cover;
+        min-height: 70vh;
     }
 }
 
-.fa.fa-arrow-left {
-    left: 10px;
-}
-
-.fa.fa-arrow-right {
-    right: 10px;
-}
-
-// position indicator dots
-.carouselNav {
+.wrap--hero {
+    @include flexCenter(column);
     position: absolute;
-    bottom: 10px;
-}
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 70%;
 
-.indicatorDot {
-    width: 12px;
-    height: 12px;
-    background: black;
-    border-radius: 50%;
-    margin: 5px;
-    display: inline-block;
-}
-
-.indicatorDot.active {
-    background: $text-gray;
+    @media (max-width: 500px) {
+        width: 90%;
+    }
 }
 
 /*----------------------------------------
@@ -118,6 +104,7 @@ img {
 .categories .wrapper {
     @include flexCenter(column);
 }
+
 // position flower behind heading
 .categories .heading--section {
     position: relative;
@@ -132,6 +119,8 @@ img {
 
 .wrap--categoriesDescription {
     @include flexCenter(column);
+    padding: 60px 0;
+
 }
 
 .wrap--overlayText {
@@ -250,9 +239,6 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-gap: 20px;
-    @media (max-width: $break-large) {
-        // grid-gap: 10px;
-    }
 }
 
 
